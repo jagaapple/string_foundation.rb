@@ -1,12 +1,37 @@
-/.bundle/
-/.yardoc
-/Gemfile.lock
-/_yardoc/
-/coverage/
-/doc/
-/pkg/
-/spec/reports/
-/tmp/
+# ==============================================================================
+# GIT IGNORE
+# ==============================================================================
+# ------------------------------------------------------------------------------
+# Temp Files
+# ------------------------------------------------------------------------------
+# Generated temporary files by OS or editors.
+*~
+*#
+*.bak
+*.tmproj
+.buildpath
+.project
+.settings
+.idea
+.tmp
+.netbeans
+build
+nbproject
 
-# rspec failure tracking
-.rspec_status
+
+# ------------------------------------------------------------------------------
+# Dynamicaly Generated Files
+# ------------------------------------------------------------------------------
+# Hidden files created by OS.
+Thumbs.db
+desktop.ini
+.DS_Store
+.DS_STORE
+
+# Generated files created by Ruby.
+.bundle
+
+# Generated files created by Ruby Gems.
+tmp
+Gemfile.lock
+coverage
