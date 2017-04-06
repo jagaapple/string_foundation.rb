@@ -5,3 +5,13 @@ source 'https://rubygems.org'
 
 # Specify your gem's dependencies in string_foundation.gemspec.
 gemspec
+
+# ------------------------------------------------------------------------------
+# For Test
+# ------------------------------------------------------------------------------
+group :test do
+
+  # Use RSpec for unit test.
+  gem 'rspec'
+
+end

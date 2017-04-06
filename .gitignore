@@ -35,3 +35,4 @@ desktop.ini
 tmp
 Gemfile.lock
 coverage
+.rspec_status
