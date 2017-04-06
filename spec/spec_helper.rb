@@ -1,6 +1,21 @@
 # ==============================================================================
 # SPEC - SPEC HELPER
 # ==============================================================================
+# Configure Simple Cov to get coverage and Codecov.
+# !! These should be written at the beginning of this file to work. !!
+require 'simplecov'
+require 'simplecov-console'
+if ENV['CI']
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+else
+  SimpleCov.formatters = [
+    SimpleCov::Formatter::HTMLFormatter,
+    SimpleCov::Formatter::Console,
+  ]
+end
+SimpleCov.start
+
+# Require core files.
 require 'bundler/setup'
 require 'string_foundation'
 

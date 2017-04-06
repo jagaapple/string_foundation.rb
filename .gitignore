@@ -30,9 +30,9 @@ desktop.ini
 
 # Generated files created by Ruby.
 .bundle
+Gemfile.lock
 
 # Generated files created by Ruby Gems.
 tmp
-Gemfile.lock
 coverage
 .rspec_status
