@@ -13,5 +13,9 @@ group :test do
 
   # Use RSpec for unit test.
   gem 'rspec'
+  # Use a code coverage analysis tool for Ruby.
+  gem 'simplecov'
+  # Output the result of SimpleCov to a console.
+  gem 'simplecov-console'
 
 end
