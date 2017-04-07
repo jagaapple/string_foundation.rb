@@ -2,44 +2,75 @@
 <!-- README                                                                  -->
 <!-- ======================================================================= -->
 # StringFoundation
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/string_foundation`. To experiment with that code, run `bin/console` for an interactive prompt.
+StringFoundation is a Ruby library for providing useful methods to Ruby String class.
 
-TODO: Delete this and the text above, and describe your gem
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing to StringFoundation](#contributing-to-stringfoundation)
+- [License](#license)
+- [Copyright](#copyright)
 
 
 ## Installation
-Add this line to your application's Gemfile:
+StringFoundation is available as a gem, to install it just install the gem:
+
+```bash
+$ gem install string_foundation
+```
+
+If you are using Bundler, add this line to your application's Gemfile:
 
 ```ruby
 gem 'string_foundation'
 ```
 
-And then execute:
-
-```shell
-$ bundle
-```
-
-Or install it yourself as:
-
-```shell
-$ gem install string_foundation
-```
+And then run `bundle install` .
 
 
 ## Usage
-TODO: Write usage instructions here
+The following is a part of StringFoundation provides.
+
+```ruby
+# Check for convertable.
+'123'.to_i?  #=> true
+'x123'.to_i? #=> false
+
+# Convert a value to appropriate type.
+'false'.to_pretty #=> false
+'.5'.to_pretty    #=> 0.5
+
+# Convert to lowerCamelCase.
+'user_id'.to_lcc #=> 'userId'
+```
 
 
-## Development
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Convertable Methods
+You can check for any convertable, these methods return `true` or `false` .
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+# To Integer type.
+'123'.to_i? #=> true
+
+# To Float type.
+'0.51'.to_f? #=> true
+
+# To TrueClass or FalseClass type.
+'true'.to_bool? #=> true
+```
 
 
-## Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/string_foundation. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+## Contributing to StringFoundation
+Bug reports and pull requests are welcome on GitHub at
+[https://github.com/brushdown/string_foundation](https://github.com/brushdown/string_foundation).
+This project is intended to be a safe, welcoming space for collaboration, and
+contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+
+## Copyright
+Copyright 2017 Jaga Apple, and Brushdown.
