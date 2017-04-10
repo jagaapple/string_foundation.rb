@@ -2,6 +2,9 @@
 <!-- README                                                                  -->
 <!-- ======================================================================= -->
 # StringFoundation
+
+[![CircleCI](https://circleci.com/gh/brushdown/string_foundation.svg?style=shield&circle-token=6a26eeb30ff51076ae87be13b45466922cd5f9fe)](https://circleci.com/gh/brushdown/string_foundation) [![codecov](https://codecov.io/gh/brushdown/string_foundation/branch/master/graph/badge.svg)](https://codecov.io/gh/brushdown/string_foundation)
+
 StringFoundation is a Ruby library for providing useful methods to Ruby String class.
 
 
