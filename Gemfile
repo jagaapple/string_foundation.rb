@@ -29,5 +29,7 @@ group :test do
   gem 'simplecov'
   # Output the result of SimpleCov to a console.
   gem 'simplecov-console'
+  # Use Codecov to get status badges.
+  gem 'codecov'
 
 end
