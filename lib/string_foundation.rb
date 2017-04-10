@@ -1,8 +1,9 @@
 # ==============================================================================
 # LIB - STRING FOUNDATION - STRING FOUNDATION
 # ==============================================================================
-require "string_foundation/version"
+require 'string_foundation/version'
 
+# Extend String Class.
 class String
 
   # Evaluate to be possible to convert to Integer type from String.

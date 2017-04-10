@@ -1,6 +1,7 @@
 # ==============================================================================
-# LIB - STRING FOUNDATION - VERSION
+# CIRCLE
 # ==============================================================================
-module StringFoundation
-  VERSION = '0.1.0'.freeze
-end
+# Settings for CircleCI.
+machine:
+  environment:
+    CI: true
