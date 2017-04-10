@@ -5,6 +5,7 @@
 # !! These should be written at the beginning of this file to work. !!
 require 'simplecov'
 require 'simplecov-console'
+require 'codecov'
 if ENV['CI']
   SimpleCov.formatter = SimpleCov::Formatter::Codecov
 else
