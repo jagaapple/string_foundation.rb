@@ -31,5 +31,7 @@ group :test do
   gem 'simplecov-console'
   # Use Codecov to get status badges.
   gem 'codecov'
+  # Generate random text.
+  gem 'random_token'
 
 end
