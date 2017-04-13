@@ -26,4 +26,14 @@ class String
     false
   end
 
+  # Whether or not to be possible to covert String to something which behaves
+  # like boolean types.
+  def to_booly?
+    return true if self.length == 0
+    return true if ['true', 'false'].include?(self)
+    return true if self.to_f?
+
+    false
+  end
+
 end

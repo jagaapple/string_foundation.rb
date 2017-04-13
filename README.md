@@ -103,7 +103,7 @@ returns `2.0` ).
 
 ### To TrueClass / FalseClass
 `to_bool?` method is to check convertable for TrueClass or FalseClass.
-This returns `true` only when the string is `'true'` or `'false'` .
+This returns `true` or `false` only when the string is `'true'` or `'false'` .
 
 ```ruby
 'true'.to_bool?  #=> true
@@ -111,6 +111,19 @@ This returns `true` only when the string is `'true'` or `'false'` .
 
 'abc'.to_bool?   #=> false
 '123'.to_bool?   #=> false
+```
+
+Also StringFoundation provides to check convertable for "Booly" (truthy or falsy).
+This returns `true` only when the string is a positive number or `'true'` ,
+an empty string, otherwise returns `false` .
+
+```ruby
+'true'.to_booly? #=> true
+'123'.to_booly?  #=> true
+''.to_booly?     #=> true
+'-3'.to_booly?   #=> true
+
+'abc'.to_booly?  #=> false
 ```
 
 
