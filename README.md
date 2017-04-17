@@ -10,13 +10,19 @@ class.
 
 
 ## Table of Contents
-- [Installation](#installation)
-- [Basic Usage](#basic-usage)
-- [Convertable Methods](#convertable-methods)
-- [With Methods](#with-methods)
-- [Contributing to StringFoundation](#contributing-to-stringfoundation)
-- [License](#license)
-- [Copyright](#copyright)
+- [StringFoundation](#stringfoundation)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Basic Usage](#basic-usage)
+  - [Convertable Methods](#convertable-methods)
+    - [To Integer](#to-integer)
+    - [To Float](#to-float)
+    - [To TrueClass / FalseClass](#to-trueclass--falseclass)
+  - [With Methods](#with-methods)
+    - [Remove Leading Zeros (Zero Padding)](#remove-leading-zeros-zero-padding)
+  - [Contributing to StringFoundation](#contributing-to-stringfoundation)
+  - [License](#license)
+  - [Copyright](#copyright)
 
 
 ## Installation
@@ -60,12 +66,12 @@ COnvertable methods provide to check whether or not to be possible to convert
 a string object to other class objects. These methods return `true` or `false` .
 
 ### To Integer
-`to_i?` method is to check convertable for Integer class (including Fixnum
+`to_i?` method is to check convertable to an Integer object (including Fixnum
 and Bignum classes).
-This returns `true` only when an argument is convertable for Integer class, so
+This returns `true` only when an argument is convertable to an Integer object, so
 an argument is not needed to be an integral number. If you set a floating point number
 as an argument that should be passed to this method, this returns `true` because of
-be converted Integer object using `to_i` Ruby built-in method (For example,
+be converted an Integer object using `to_i` Ruby built-in method (For example,
 `'0.4'.to_i` returns `0` ).
 
 ```ruby
@@ -84,8 +90,8 @@ Also when an argument with leading-zeros, they will be removed before checking.
 ```
 
 ### To Float
-`to_f?` method is to check convertable for Float class.
-This returns `true` only when an argument is convertable for Float class, so
+`to_f?` method is to check convertable to Float class.
+This returns `true` only when an argument is convertable to Float class, so
 an argument is not needed to be a floating point number. If you set an integral number
 as an argument that should be passed to this method, this returns `true` because of
 be converted Float object using `to_f` Ruby built-in method (For example, `'2'.to_f`
@@ -102,7 +108,7 @@ returns `2.0` ).
 
 
 ### To TrueClass / FalseClass
-`to_bool?` method is to check convertable for TrueClass or FalseClass.
+`to_bool?` method is to check convertable to TrueClass or FalseClass.
 This returns `true` or `false` only when the string is `'true'` or `'false'` .
 
 ```ruby
@@ -113,7 +119,7 @@ This returns `true` or `false` only when the string is `'true'` or `'false'` .
 '123'.to_bool?   #=> false
 ```
 
-Also StringFoundation provides to check convertable for "Booly" (truthy or falsy).
+Also StringFoundation provides to check convertable to "Booly" (truthy or falsy).
 This returns `true` only when the string is a positive number or `'true'` ,
 an empty string, otherwise returns `false` .
 
@@ -132,9 +138,11 @@ With methods provide to append or remove specific characters from a string objec
 
 ### Remove Leading Zeros (Zero Padding)
 `without_leading_zeros` method removes leading zeros (it is called "zero padding").
+This supports a floating point number and a string starting with a plus or minus sign.
 
 ```ruby
-'00001'.without_leading_zeros #=> '1'
+'00001'.without_leading_zeros   #=> '1'
+'-0000.3'.without_leading_zeros #=> '-0.3'
 
 %w(00001 00003 00008).map { |num| num.without_leading_zeros } #=> ['1', '3', '8']
 ```
@@ -164,4 +172,4 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 
 ## Copyright
-Copyright 2017 Jaga Apple, and Brushdown.
+Copyright 2017 Jaga Apple, and Brushdown. All rights reserved.
