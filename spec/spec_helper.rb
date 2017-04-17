@@ -20,6 +20,9 @@ SimpleCov.start
 require 'bundler/setup'
 require 'string_foundation'
 
+# Require components.
+require 'random_token'
+
 # ------------------------------------------------------------------------------
 # RSpec Settings
 # ------------------------------------------------------------------------------
