@@ -6,7 +6,7 @@ class String
 
   # Whether or not to be possible to covert String to Integer.
   def to_i?
-    Integer(self.without_zero_prefix)
+    Integer(Float(self.without_leading_zeros))
     true
   rescue ArgumentError
     false
@@ -14,7 +14,7 @@ class String
 
   # Whether or not to be possible to covert String to Float.
   def to_f?
-    Float(self.without_zero_prefix)
+    Float(self.without_leading_zeros)
     true
   rescue ArgumentError
     false
