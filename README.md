@@ -13,8 +13,10 @@ class.
 
 <!-- MarkdownTOC autolink="true" bracket="round" -->
 
-- [Installation](#installation)
-- [Basic Usage](#basic-usage)
+- [Quick Start](#quick-start)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Basic Usage](#basic-usage)
 - [Convertable Methods](#convertable-methods)
   - [To Integer](#to-integer)
   - [To Float](#to-float)
@@ -23,12 +25,16 @@ class.
   - [Remove Leading Zeros \(Zero Padding\)](#remove-leading-zeros-zero-padding)
 - [Contributing to StringFoundation](#contributing-to-stringfoundation)
 - [License](#license)
-- [Copyright](#copyright)
 
 <!-- /MarkdownTOC -->
 
 
-## Installation
+## Quick Start
+### Requirements
+- Ruby version 2.1.0 or higher
+- A project that uses source control, such as Git
+
+### Installation
 StringFoundation is available as a gem, to install it just install the gem:
 
 ```bash
@@ -43,8 +49,7 @@ gem 'string_foundation'
 
 And then run `bundle install` .
 
-
-## Basic Usage
+### Basic Usage
 The following is a part of StringFoundation provides.
 
 ```ruby
@@ -158,10 +163,13 @@ This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org)
 code of conduct.
 
+We adhere GitHub Flow to develop this project. Anything in the `master` branch
+is deployable. To work on something new, create a descriptively named branch
+off of master, also add a prefix `feature/` to its name.
+For more details, see [GitHub Flow – Scott Chacon](http://scottchacon.com/2011/08/31/github-flow.html).
+
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-
-## Copyright
 Copyright 2017 Jaga Apple, and Brushdown. All rights reserved.
