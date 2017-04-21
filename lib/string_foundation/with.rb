@@ -3,6 +3,7 @@
 # ==============================================================================
 # frozen_string_literal: true
 class String
+
   # Remove leading zeros.
   def without_leading_zeros
     return self if self == '0'
