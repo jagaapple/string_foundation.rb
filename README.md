@@ -7,6 +7,7 @@
 [![codecov](https://img.shields.io/codecov/c/github/brushdown/string_foundation/master.svg)](https://codecov.io/gh/brushdown/string_foundation)
 [![Gem](https://img.shields.io/gem/v/string_foundation.svg)](https://rubygems.org/gems/string_foundation/)
 [![license](https://img.shields.io/github/license/brushdown/string_foundation.svg)](https://opensource.org/licenses/MIT)
+[![@jagaapple](https://img.shields.io/badge/contact-%40jagaapple-blue.svg)](https://twitter.com/jagaapple)
 
 String Foundation is a Ruby library for providing useful methods to Ruby String
 class.
