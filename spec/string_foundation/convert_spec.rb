@@ -1,0 +1,102 @@
+# ==============================================================================
+# SPEC - STRING FOUNDATION - CONVERT
+# ==============================================================================
+# frozen_string_literal: true
+describe '[ Convert Methods ]' do
+
+  # ----------------------------------------------------------------------------
+  # Convert To TrueClass Or FalseClass
+  # ----------------------------------------------------------------------------
+  describe 'CONVERT TO TRUECLASS OR FALSE CLASS' do
+    let(:string) { nil }
+    subject { string.to_bool }
+
+    context 'when a string is "true",' do
+      let(:string) { 'true' }
+
+      it { is_expected.to eq true }
+    end
+
+    context 'when a string is "false",' do
+      let(:string) { 'false' }
+
+      it { is_expected.to eq false }
+    end
+
+    context 'when a string is invalid,' do
+      let(:string) { 'dummy' }
+
+      it { is_expected_as_block.to raise_error(TypeError) }
+    end
+  end
+
+
+  # ----------------------------------------------------------------------------
+  # Convert A BOOLY STRING To TrueClass Or FalseClass
+  # ----------------------------------------------------------------------------
+  describe 'CONVERT A BOOLY STRING TO TRUECLASS OR FALSE CLASS' do
+    let(:string) { nil }
+    subject { string.to_booly }
+
+    context 'when a string is "true",' do
+      let(:string) { 'true' }
+
+      it { is_expected.to eq true }
+    end
+
+    context 'when a string is "false",' do
+      let(:string) { 'false' }
+
+      it { is_expected.to eq false }
+    end
+
+    context 'when a string is invalid,' do
+      let(:string) { 'dummy' }
+
+      it { is_expected_as_block.to raise_error(TypeError) }
+    end
+
+    context 'when a string is a positive integer number,' do
+      let(:string) { '1' }
+
+      it { is_expected.to eq true }
+    end
+
+    context 'when a string is a negative integer number,' do
+      let(:string) { '-1' }
+
+      it { is_expected.to eq false }
+    end
+
+    context 'when a string is a positive floating point number,' do
+      let(:string) { '0.1' }
+
+      it { is_expected.to eq true }
+    end
+
+    context 'when a string is a negative floating point number,' do
+      let(:string) { '-0.1' }
+
+      it { is_expected.to eq false }
+    end
+
+    context 'when a string is 0,' do
+      let(:string) { '0' }
+
+      it { is_expected.to eq false }
+    end
+
+    context 'when a string is 0.0,' do
+      let(:string) { '0.0' }
+
+      it { is_expected.to eq false }
+    end
+
+    context 'when a string is an empty string,' do
+      let(:string) { '' }
+
+      it { is_expected.to eq false }
+    end
+  end
+
+end
