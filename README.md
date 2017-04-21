@@ -1,14 +1,14 @@
 <!-- ======================================================================= -->
 <!-- README                                                                  -->
 <!-- ======================================================================= -->
-# StringFoundation
+# String Foundation
 
 [![CircleCI](https://img.shields.io/circleci/project/github/brushdown/string_foundation/master.svg)](https://circleci.com/gh/brushdown/string_foundation)
 [![codecov](https://img.shields.io/codecov/c/github/brushdown/string_foundation/master.svg)](https://codecov.io/gh/brushdown/string_foundation)
 [![Gem](https://img.shields.io/gem/v/string_foundation.svg)](https://rubygems.org/gems/string_foundation/)
 [![license](https://img.shields.io/github/license/brushdown/string_foundation.svg)](https://opensource.org/licenses/MIT)
 
-StringFoundation is a Ruby library for providing useful methods to Ruby String
+String Foundation is a Ruby library for providing useful methods to Ruby String
 class.
 
 
@@ -26,7 +26,7 @@ class.
   - [To TrueClass / FalseClass](#to-trueclass--falseclass)
 - [With Methods](#with-methods)
   - [Remove Leading Zeros \(Zero Padding\)](#remove-leading-zeros-zero-padding)
-- [Contributing to StringFoundation](#contributing-to-stringfoundation)
+- [Contributing to String Foundation](#contributing-to-string-foundation)
 - [License](#license)
 
 <!-- /MarkdownTOC -->
@@ -38,7 +38,7 @@ class.
 - A project that uses source control, such as Git
 
 ### Installation
-StringFoundation is available as a gem, to install it just install the gem:
+String Foundation is available as a gem, to install it just install the gem:
 
 ```bash
 $ gem install string_foundation
@@ -53,7 +53,7 @@ gem 'string_foundation'
 And then run `bundle install` .
 
 ### Basic Usage
-The following is a part of StringFoundation provides.
+The following is a part of String Foundation provides.
 
 ```ruby
 # Check for convertable.
@@ -130,7 +130,7 @@ This returns `true` or `false` only when the string is `'true'` or `'false'` .
 '123'.to_bool?   #=> false
 ```
 
-Also StringFoundation provides to check convertable to "Booly" (truthy or falsy).
+Also String Foundation provides to check convertable to "Booly" (truthy or falsy).
 This returns `true` only when the string is a positive number or `'true'` ,
 an empty string, otherwise returns `false` .
 
@@ -159,7 +159,7 @@ This supports a floating point number and a string starting with a plus or minus
 ```
 
 
-## Contributing to StringFoundation
+## Contributing to String Foundation
 Bug reports and pull requests are welcome on GitHub at
 [https://github.com/brushdown/string_foundation](https://github.com/brushdown/string_foundation).
 This project is intended to be a safe, welcoming space for collaboration, and
