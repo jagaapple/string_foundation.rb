@@ -3,29 +3,41 @@
 <!-- ======================================================================= -->
 # StringFoundation
 
-[![CircleCI](https://circleci.com/gh/brushdown/string_foundation.svg?style=shield&circle-token=6a26eeb30ff51076ae87be13b45466922cd5f9fe)](https://circleci.com/gh/brushdown/string_foundation) [![codecov](https://codecov.io/gh/brushdown/string_foundation/branch/master/graph/badge.svg)](https://codecov.io/gh/brushdown/string_foundation)
+[![CircleCI](https://img.shields.io/circleci/project/github/brushdown/string_foundation/master.svg)](https://circleci.com/gh/brushdown/string_foundation)
+[![codecov](https://img.shields.io/codecov/c/github/brushdown/string_foundation/master.svg)](https://codecov.io/gh/brushdown/string_foundation)
+[![Gem](https://img.shields.io/gem/v/string_foundation.svg)](https://rubygems.org/gems/string_foundation/)
+[![license](https://img.shields.io/github/license/brushdown/string_foundation.svg)](https://opensource.org/licenses/MIT)
 
 StringFoundation is a Ruby library for providing useful methods to Ruby String
 class.
 
 
 ## Table of Contents
-- [StringFoundation](#stringfoundation)
-  - [Table of Contents](#table-of-contents)
+
+<!-- MarkdownTOC autolink="true" bracket="round" -->
+
+- [Quick Start](#quick-start)
+  - [Requirements](#requirements)
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
-  - [Convertable Methods](#convertable-methods)
-    - [To Integer](#to-integer)
-    - [To Float](#to-float)
-    - [To TrueClass / FalseClass](#to-trueclass--falseclass)
-  - [With Methods](#with-methods)
-    - [Remove Leading Zeros (Zero Padding)](#remove-leading-zeros-zero-padding)
-  - [Contributing to StringFoundation](#contributing-to-stringfoundation)
-  - [License](#license)
-  - [Copyright](#copyright)
+- [Convertable Methods](#convertable-methods)
+  - [To Integer](#to-integer)
+  - [To Float](#to-float)
+  - [To TrueClass / FalseClass](#to-trueclass--falseclass)
+- [With Methods](#with-methods)
+  - [Remove Leading Zeros \(Zero Padding\)](#remove-leading-zeros-zero-padding)
+- [Contributing to StringFoundation](#contributing-to-stringfoundation)
+- [License](#license)
+
+<!-- /MarkdownTOC -->
 
 
-## Installation
+## Quick Start
+### Requirements
+- Ruby version 2.1.0 or higher
+- A project that uses source control, such as Git
+
+### Installation
 StringFoundation is available as a gem, to install it just install the gem:
 
 ```bash
@@ -40,8 +52,7 @@ gem 'string_foundation'
 
 And then run `bundle install` .
 
-
-## Basic Usage
+### Basic Usage
 The following is a part of StringFoundation provides.
 
 ```ruby
@@ -147,17 +158,6 @@ This supports a floating point number and a string starting with a plus or minus
 %w(00001 00003 00008).map { |num| num.without_leading_zeros } #=> ['1', '3', '8']
 ```
 
-Also you can use `without_leading_zeros!` method which removes leading zeros and
-the receiver will be changed (bang method).
-
-```ruby
-num = '00001'
-num.without_leading_zeros! #=> '1'
-num                        #=> '1'
-```
-
-`without_zero_pad` and `without_zero_pad!` are alias methods.
-
 
 ## Contributing to StringFoundation
 Bug reports and pull requests are welcome on GitHub at
@@ -166,10 +166,13 @@ This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org)
 code of conduct.
 
+We adhere GitHub Flow to develop this project. Anything in the `master` branch
+is deployable. To work on something new, create a descriptively named branch
+off of master, also add a prefix `feature/` to its name.
+For more details, see [GitHub Flow – Scott Chacon](http://scottchacon.com/2011/08/31/github-flow.html).
+
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-
-## Copyright
 Copyright 2017 Jaga Apple, and Brushdown. All rights reserved.

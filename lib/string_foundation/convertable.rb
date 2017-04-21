@@ -1,6 +1,7 @@
 # ==============================================================================
 # LIB - STRING FOUNDATION - CONVERTABLE
 # ==============================================================================
+# frozen_string_literal: true
 require_relative 'with'
 class String
 
