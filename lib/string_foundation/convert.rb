@@ -35,4 +35,15 @@ class String
     (self.length > 0) ? self : nil
   end
 
+  # Convert from newline character to specific characters.
+  def nl_to(char)
+    char = '' if char.nil?
+    self.gsub(/(\r\n|\n)/, char)
+  end
+
+  # Convert from newline character to a HTML tag "<br>".
+  def nl_to_br
+    self.nl_to('<br>')
+  end
+
 end

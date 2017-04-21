@@ -162,4 +162,73 @@ describe '[ Convert Methods ]' do
     end
   end
 
+
+  # ----------------------------------------------------------------------------
+  # Convert From Newline To Characters
+  # ----------------------------------------------------------------------------
+  describe 'CONVERT FROM NEWLINE TO CHARACTERS' do
+    let(:string) { "We are Brushdown.\nWe are Brushdown." }
+    let(:char) { '<br>' }
+    subject { string.nl_to(char) }
+
+    context 'when a string has newlines "\n",' do
+      it { is_expected.to eq 'We are Brushdown.<br>We are Brushdown.' }
+    end
+
+    context 'when a string has newlines "\r\n",' do
+      let(:string) { "We are Brushdown.\r\nWe are Brushdown." }
+
+      it { is_expected.to eq 'We are Brushdown.<br>We are Brushdown.' }
+    end
+
+    context 'when a string does not have newlines,' do
+      let(:string) { "We are Brushdown. We are Brushdown." }
+
+      it { is_expected.to eq string }
+    end
+
+    context 'when an argument is not set,' do
+      subject { string.nl_to() }
+
+      it { is_expected_as_block.to raise_error(ArgumentError) }
+    end
+
+    context 'when an argument is nil,' do
+      let(:char) { nil }
+
+      it { is_expected.to eq 'We are Brushdown.We are Brushdown.' }
+    end
+
+    context 'when an argument is an empty string,' do
+      let(:char) { '' }
+
+      it { is_expected.to eq 'We are Brushdown.We are Brushdown.' }
+    end
+  end
+
+
+  # ----------------------------------------------------------------------------
+  # Convert From Newline To <br>
+  # ----------------------------------------------------------------------------
+  describe 'CONVERT FROM NEWLINE TO `<br>`' do
+    let(:string) { "We are Brushdown.\nWe are Brushdown." }
+    subject { string.nl_to_br }
+
+    context 'when a string has newlines "\n",' do
+      it { is_expected.to eq 'We are Brushdown.<br>We are Brushdown.' }
+    end
+
+    context 'when a string has newlines "\r\n",' do
+      let(:string) { "We are Brushdown.\r\nWe are Brushdown." }
+
+      it { is_expected.to eq 'We are Brushdown.<br>We are Brushdown.' }
+    end
+
+    context 'when a string does not have newlines,' do
+      let(:string) { "We are Brushdown. We are Brushdown." }
+
+      it { is_expected.to eq string }
+    end
+  end
+
 end
