@@ -46,4 +46,6 @@ class String
     self.nl_to('<br>')
   end
 
+  alias_method :nl2, :nl_to
+  alias_method :nl2br, :nl_to_br
 end
