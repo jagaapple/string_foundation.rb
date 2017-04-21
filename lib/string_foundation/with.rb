@@ -1,6 +1,7 @@
 # ==============================================================================
 # LIB - STRING FOUNDATION - WITH
 # ==============================================================================
+# frozen_string_literal: true
 class String
   # Remove leading zeros.
   def without_leading_zeros
@@ -20,11 +21,5 @@ class String
     end
   end
 
-  # Remove leading zeros and change a receiver value.
-  def without_leading_zeros!
-    self.replace(self.without_leading_zeros)
-  end
-
   alias_method :without_zero_pad, :without_leading_zeros
-  alias_method :without_zero_pad!, :without_leading_zeros!
 end

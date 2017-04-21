@@ -150,17 +150,6 @@ This supports a floating point number and a string starting with a plus or minus
 %w(00001 00003 00008).map { |num| num.without_leading_zeros } #=> ['1', '3', '8']
 ```
 
-Also you can use `without_leading_zeros!` method which removes leading zeros and
-the receiver will be changed (bang method).
-
-```ruby
-num = '00001'
-num.without_leading_zeros! #=> '1'
-num                        #=> '1'
-```
-
-`without_zero_pad` and `without_zero_pad!` are alias methods.
-
 
 ## Contributing to StringFoundation
 Bug reports and pull requests are welcome on GitHub at

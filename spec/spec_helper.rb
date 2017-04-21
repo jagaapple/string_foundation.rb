@@ -1,6 +1,7 @@
 # ==============================================================================
 # SPEC - SPEC HELPER
 # ==============================================================================
+# frozen_string_literal: true
 # Configure Simple Cov to get coverage and Codecov.
 # !! These should be written at the beginning of this file to work. !!
 require 'simplecov'
