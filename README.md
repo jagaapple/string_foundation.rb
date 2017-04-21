@@ -1,7 +1,9 @@
 <!-- ======================================================================= -->
 <!-- README                                                                  -->
 <!-- ======================================================================= -->
-# String Foundation
+![String Foundation](string_foundation.png)
+
+---
 
 [![CircleCI](https://img.shields.io/circleci/project/github/brushdown/string_foundation/master.svg)](https://circleci.com/gh/brushdown/string_foundation)
 [![codecov](https://img.shields.io/codecov/c/github/brushdown/string_foundation/master.svg)](https://codecov.io/gh/brushdown/string_foundation)
