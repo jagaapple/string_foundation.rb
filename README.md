@@ -32,6 +32,7 @@ class.
 - [The Convert Methods](#the-convert-methods)
   - [To TrueClass / FalseClass](#to-trueclass--falseclass-1)
   - [To Proper Class](#to-proper-class)
+  - [Newlines To Characters](#newlines-to-characters)
 - [The Like Methods](#the-like-methods)
   - [Like Integer](#like-integer)
   - [Like Float](#like-float)
@@ -221,6 +222,23 @@ Also this returns nil when a string is an empty string.
 'false'.to_pretty #=> false
 
 ''.to_pretty #=> nil
+```
+
+### Newlines To Characters
+`nl_to` method is to convert from a string has newlines to specific characters.
+`nl2` method is alias for `nl_to` .
+
+```ruby
+"Hi!\nWe are Brushdown.".nl_to(' / ') #=> 'Hi! / We are Brushdown.'
+"Hi!\nWe are Brushdown.".nl2(' / ')   #=> 'Hi! / We are Brushdown.'
+```
+
+`nl_to_br` method is to convert from a string has newlines to a HTML tag `<br>`
+for break line. `nl2br` method is alias for `nl_to_br` .
+
+```ruby
+"Hi!\nWe are Brushdown.".nl_to_br #=> 'Hi!<br>We are Brushdown.'
+"Hi!\nWe are Brushdown.".nl2br    #=> 'Hi!<br>We are Brushdown.'
 ```
 
 
