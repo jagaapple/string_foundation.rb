@@ -29,6 +29,9 @@ class.
   - [To TrueClass / FalseClass](#to-trueclass--falseclass)
 - [The With Methods](#the-with-methods)
   - [Remove Leading Zeros \(Zero Padding\)](#remove-leading-zeros-zero-padding)
+- [The Convert Methods](#the-convert-methods)
+  - [To TrueClass / FalseClass](#to-trueclass--falseclass-1)
+  - [To Proper Class](#to-proper-class)
 - [The Like Methods](#the-like-methods)
   - [Like Integer](#like-integer)
   - [Like Float](#like-float)
@@ -162,6 +165,62 @@ This supports a floating point number and a string starting with a plus or minus
 '-0000.3'.without_leading_zeros #=> '-0.3'
 
 %w(00001 00003 00008).map { |num| num.without_leading_zeros } #=> ['1', '3', '8']
+```
+
+
+## The Convert Methods
+The convert methods provide to convert to a specific class object. The Ruby built-in
+methods are included converting from a string to an Integer object or an Float
+object, but not included converting to a TrueClass / FalseClass object and a proper
+class object. The Convert Methods can them.
+
+### To TrueClass / FalseClass
+`to_bool` method is to convert from a "true" or "false" string to `true` or `false`,
+otherwise this raise TypeError.
+
+```ruby
+'true'.to_bool  #=> true
+'false'.to_bool #=> false
+
+'1'.to_bool   #=> TypeError
+'0'.to_bool   #=> TypeError
+'-1'.to_bool  #=> TypeError
+'abc'.to_bool #=> TypeError
+''.to_bool    #=> TypeError
+```
+
+If you want to convert a booly string, you can use `to_booly` method. When a string
+is a string "true" or positive number, this method return `true` , otherwise `false` .
+
+```ruby
+'true'.to_booly  #=> true
+'false'.to_booly #=> false
+
+'1'.to_booly   #=> true
+'0'.to_booly   #=> false
+'-1'.to_booly  #=> false
+'abc'.to_booly #=> TypeError
+''.to_booly    #=> false
+```
+
+### To Proper Class
+`to_pretty` method is so powerful. This method can convert to a proper class, for
+example, returns TrueClass `true` when a string is "true", or returns Integer `1`
+when a string is "1".
+Also this returns nil when a string is an empty string.
+
+```ruby
+'1'.to_pretty      #=> 1
+'-3'.to_pretty     #=> -3
+'0004'.to_pretty   #=> 4
+'0.1'.to_pretty    #=> 0.1
+'-.5'.to_pretty    #=> -0.5
+'00.01'.to_pretty  #=> 0.01
+
+'true'.to_pretty  #=> true
+'false'.to_pretty #=> false
+
+''.to_pretty #=> nil
 ```
 
 
