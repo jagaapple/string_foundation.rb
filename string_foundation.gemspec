@@ -1,6 +1,7 @@
 # ==============================================================================
 # STRING FOUNDATION GEMSPEC
 # ==============================================================================
+# frozen_string_literal: true
 $:.push File.expand_path("../lib", __FILE__)
 require 'string_foundation/version'
 
