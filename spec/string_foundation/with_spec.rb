@@ -1,6 +1,7 @@
 # ==============================================================================
 # SPEC - STRING FOUNDATION - VERSION
 # ==============================================================================
+# frozen_string_literal: true
 describe '[ With Methods ]' do
 
   # ----------------------------------------------------------------------------
@@ -91,20 +92,6 @@ describe '[ With Methods ]' do
       it 'should return the same string' do
         random_text = RandomToken.gen(10, seed: :alphabet).without_leading_zeros
         expect(random_text).to eq random_text
-      end
-    end
-  end
-
-
-  # ----------------------------------------------------------------------------
-  # Without Leading Zeros (Bang)
-  # ----------------------------------------------------------------------------
-  describe 'WITHOUT LEADING ZEROS (BANG) ::' do
-    context 'when a string has leading zeros,' do
-      it 'should be removed leading zeros' do
-        string = '0000123'
-        expect(string.without_leading_zeros!).to eq '123'
-        expect(string).to eq '123'
       end
     end
   end
