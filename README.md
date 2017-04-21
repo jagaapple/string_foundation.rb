@@ -3,7 +3,10 @@
 <!-- ======================================================================= -->
 # StringFoundation
 
-[![CircleCI](https://circleci.com/gh/brushdown/string_foundation.svg?style=shield&circle-token=6a26eeb30ff51076ae87be13b45466922cd5f9fe)](https://circleci.com/gh/brushdown/string_foundation) [![codecov](https://codecov.io/gh/brushdown/string_foundation/branch/master/graph/badge.svg)](https://codecov.io/gh/brushdown/string_foundation)
+[![CircleCI](https://img.shields.io/circleci/project/github/brushdown/string_foundation/master.svg)](https://circleci.com/gh/brushdown/string_foundation)
+[![codecov](https://img.shields.io/codecov/c/github/brushdown/string_foundation/master.svg)](https://codecov.io/gh/brushdown/string_foundation)
+[![Gem](https://img.shields.io/gem/v/string_foundation.svg)](https://rubygems.org/gems/string_foundation/)
+[![license](https://img.shields.io/github/license/brushdown/string_foundation.svg)](https://opensource.org/licenses/MIT)
 
 StringFoundation is a Ruby library for providing useful methods to Ruby String
 class.
