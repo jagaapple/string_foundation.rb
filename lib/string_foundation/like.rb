@@ -13,7 +13,7 @@ class String
     (num.to_i == num.to_i) && !num.include?('.')
   end
 
-  # Check whether a string is an floating point number.
+  # Check whether a string is a floating point number.
   def like_f?
     return false unless self.to_f?
 
