@@ -10,19 +10,22 @@ class.
 
 
 ## Table of Contents
-- [StringFoundation](#stringfoundation)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [Basic Usage](#basic-usage)
-  - [Convertable Methods](#convertable-methods)
-    - [To Integer](#to-integer)
-    - [To Float](#to-float)
-    - [To TrueClass / FalseClass](#to-trueclass--falseclass)
-  - [With Methods](#with-methods)
-    - [Remove Leading Zeros (Zero Padding)](#remove-leading-zeros-zero-padding)
-  - [Contributing to StringFoundation](#contributing-to-stringfoundation)
-  - [License](#license)
-  - [Copyright](#copyright)
+
+<!-- MarkdownTOC autolink="true" bracket="round" -->
+
+- [Installation](#installation)
+- [Basic Usage](#basic-usage)
+- [Convertable Methods](#convertable-methods)
+  - [To Integer](#to-integer)
+  - [To Float](#to-float)
+  - [To TrueClass / FalseClass](#to-trueclass--falseclass)
+- [With Methods](#with-methods)
+  - [Remove Leading Zeros \(Zero Padding\)](#remove-leading-zeros-zero-padding)
+- [Contributing to StringFoundation](#contributing-to-stringfoundation)
+- [License](#license)
+- [Copyright](#copyright)
+
+<!-- /MarkdownTOC -->
 
 
 ## Installation
