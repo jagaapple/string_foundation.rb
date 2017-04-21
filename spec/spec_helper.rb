@@ -20,6 +20,7 @@ SimpleCov.start
 # Require core files.
 require 'bundler/setup'
 require 'string_foundation'
+require 'support/enhanced_matchers_extension'
 
 # Require components.
 require 'random_token'
@@ -28,6 +29,8 @@ require 'random_token'
 # RSpec Settings
 # ------------------------------------------------------------------------------
 RSpec.configure do |config|
+  config.include EnhancedMatchersExtension
+
   # Enable flags like --only-failures and --next-failure .
   config.example_status_persistence_file_path = '.rspec_status'
 

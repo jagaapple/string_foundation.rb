@@ -1,7 +1,7 @@
 <!-- ======================================================================= -->
 <!-- README                                                                  -->
 <!-- ======================================================================= -->
-![String Foundation](string_foundation.png)
+<img src="string_foundation.png" alt="String Foundation" width="600" height="160">
 
 ---
 
@@ -23,12 +23,18 @@ class.
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
-- [Convertable Methods](#convertable-methods)
+- [The Convertable Methods](#the-convertable-methods)
   - [To Integer](#to-integer)
   - [To Float](#to-float)
   - [To TrueClass / FalseClass](#to-trueclass--falseclass)
-- [With Methods](#with-methods)
+- [The With Methods](#the-with-methods)
   - [Remove Leading Zeros \(Zero Padding\)](#remove-leading-zeros-zero-padding)
+- [The Convert Methods](#the-convert-methods)
+  - [To TrueClass / FalseClass](#to-trueclass--falseclass-1)
+  - [To Proper Class](#to-proper-class)
+- [The Like Methods](#the-like-methods)
+  - [Like Integer](#like-integer)
+  - [Like Float](#like-float)
 - [Contributing to String Foundation](#contributing-to-string-foundation)
 - [License](#license)
 
@@ -71,13 +77,13 @@ The following is a part of String Foundation provides.
 '.5'.to_pretty    #=> 0.5
 
 # Convert to lowerCamelCase.
-'user_id'.to_lcc #=> 'userId'
+'user_id'.to_lcamel #=> 'userId'
 ```
 
 
-## Convertable Methods
-COnvertable methods provide to check whether or not to be possible to convert
-a string object to other class objects. These methods return `true` or `false` .
+## The Convertable Methods
+The convertable methods provide to check whether or not to be possible to convert
+a string object to other class objects. These method return `true` or `false` .
 
 ### To Integer
 `to_i?` method is to check convertable to an Integer object (including Fixnum
@@ -147,8 +153,8 @@ an empty string, otherwise returns `false` .
 ```
 
 
-## With Methods
-With methods provide to append or remove specific characters from a string object.
+## The With Methods
+The with methods provide to append or remove specific characters from a string object.
 
 ### Remove Leading Zeros (Zero Padding)
 `without_leading_zeros` method removes leading zeros (it is called "zero padding").
@@ -159,6 +165,94 @@ This supports a floating point number and a string starting with a plus or minus
 '-0000.3'.without_leading_zeros #=> '-0.3'
 
 %w(00001 00003 00008).map { |num| num.without_leading_zeros } #=> ['1', '3', '8']
+```
+
+
+## The Convert Methods
+The convert methods provide to convert to a specific class object. The Ruby built-in
+methods are included converting from a string to an Integer object or an Float
+object, but not included converting to a TrueClass / FalseClass object and a proper
+class object. The Convert Methods can them.
+
+### To TrueClass / FalseClass
+`to_bool` method is to convert from a "true" or "false" string to `true` or `false`,
+otherwise this raise TypeError.
+
+```ruby
+'true'.to_bool  #=> true
+'false'.to_bool #=> false
+
+'1'.to_bool   #=> TypeError
+'0'.to_bool   #=> TypeError
+'-1'.to_bool  #=> TypeError
+'abc'.to_bool #=> TypeError
+''.to_bool    #=> TypeError
+```
+
+If you want to convert a booly string, you can use `to_booly` method. When a string
+is a string "true" or positive number, this method return `true` , otherwise `false` .
+
+```ruby
+'true'.to_booly  #=> true
+'false'.to_booly #=> false
+
+'1'.to_booly   #=> true
+'0'.to_booly   #=> false
+'-1'.to_booly  #=> false
+'abc'.to_booly #=> TypeError
+''.to_booly    #=> false
+```
+
+### To Proper Class
+`to_pretty` method is so powerful. This method can convert to a proper class, for
+example, returns TrueClass `true` when a string is "true", or returns Integer `1`
+when a string is "1".
+Also this returns nil when a string is an empty string.
+
+```ruby
+'1'.to_pretty      #=> 1
+'-3'.to_pretty     #=> -3
+'0004'.to_pretty   #=> 4
+'0.1'.to_pretty    #=> 0.1
+'-.5'.to_pretty    #=> -0.5
+'00.01'.to_pretty  #=> 0.01
+
+'true'.to_pretty  #=> true
+'false'.to_pretty #=> false
+
+''.to_pretty #=> nil
+```
+
+
+## The Like Methods
+The like methods provide to check whether a string is an integral number or a
+floating point number. These method ignore leading zeros, so the string `000123`
+is regarded as an integral number. These method return `true` or `false` .
+
+### Like Integer
+`like_i?` method is to check whether a string is an integral number.
+
+```ruby
+'123'.like_i? #=> true
+'00123'.like_i? #=> true
+'0.3'.like_i? #=> false
+'.2'.like_i?  #=> false
+
+'abc'.like_i? #=> false
+'2x'.like_i?  #=> false
+```
+
+### Like Float
+`like_f?` method is to check whether a string is a floating point number.
+
+```ruby
+'123'.like_f? #=> false
+'00123'.like_f? #=> false
+'0.3'.like_f? #=> true
+'.2'.like_f?  #=> true
+
+'abc'.like_f? #=> false
+'2x'.like_f?  #=> false
 ```
 
 
@@ -178,4 +272,4 @@ For more details, see [GitHub Flow – Scott Chacon](http://scottchacon.com/2011
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-Copyright 2017 Jaga Apple, and Brushdown. All rights reserved.
+Copyright 2017 Jaga Apple and Brushdown. All rights reserved.
