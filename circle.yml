@@ -5,3 +5,10 @@
 machine:
   environment:
     CI: true
+dependencies:
+  pre:
+    - case $CIRCLE_NODE_INDEX in 0) rvm use 2.1.0 --default ;; 1) rvm use 2.4.1 --default ;; esac
+test:
+  override:
+    - ruby -v ; bundle exec rspec:
+      parallel: true
