@@ -1,7 +1,7 @@
 <!-- ======================================================================= -->
 <!-- README                                                                  -->
 <!-- ======================================================================= -->
-<img src="string_foundation.png" alt="String Foundation" width="600" height="160">
+<img src="string_foundation.png" alt="String Foundation" width="600">
 
 ---
 
