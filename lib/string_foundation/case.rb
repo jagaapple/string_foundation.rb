@@ -52,10 +52,24 @@ class String
 
   # Convert to lower-kebab-case.
   def to_lkebab
+    ukebab = self.to_ukebab
+    ukebab.downcase
   end
 
   # Convert to Upper-Kebab-Case.
   def to_ukebab
+    str = self
+    str.split('_').map do |uw|
+      uw.split('-').map do |hw|
+        hw.split('.').map do |dw|
+          dw.split(' ').map do |sw|
+            sw.split_camel.map do |cw|
+              cw.capitalize
+            end.join('-')
+          end.join('-')
+        end.join('-')
+      end.join('-')
+    end.join('-')
   end
 
   # Convert to lower space case.

@@ -434,7 +434,7 @@ describe '[ Case Methods ]' do
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'string' }
+      it { is_expected.to eq 'String' }
     end
 
     context 'When a string lowerCamelCase,' do
