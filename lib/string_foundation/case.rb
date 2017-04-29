@@ -74,10 +74,23 @@ class String
 
   # Convert to lower space case.
   def to_lspace
+    uspace = self.to_uspace
+    uspace.downcase
   end
 
   # Convert to Upper Space Case.
   def to_uspace
+    self.split('_').map do |uw|
+      uw.split('-').map do |hw|
+        hw.split('.').map do |dw|
+          dw.split(' ').map do |sw|
+            sw.split_camel.map do |cw|
+              cw.capitalize
+            end.join(' ')
+          end.join(' ')
+        end.join(' ')
+      end.join(' ')
+    end.join(' ')
   end
 
   # Convert to lower.dot.case.
