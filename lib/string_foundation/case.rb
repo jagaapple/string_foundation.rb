@@ -114,6 +114,7 @@ class String
     end.join('.')
   end
 
+  # Split string according to camel case.
   def split_camel
     words = []
     word = []
@@ -128,14 +129,17 @@ class String
     words << word.join
   end
 
+  # Whether a character is uppder case or not.
   def is_upper?
-    /[[:upper:]]/.match(self)
+    /[[:upper:]]/.match(self) ? true : false
   end
 
+  # Whether a character is lower case or not.
   def is_lower?
-    /[[:lower:]]/.match(self)
+    /[[:lower:]]/.match(self) ? true : false
   end
 
+  # Make first character lower case.
   def make_head_lower
     self[0].downcase + self[1..-1]
   end

@@ -817,4 +817,85 @@ describe '[ Case Methods ]' do
     end
   end
 
+
+  # ----------------------------------------------------------------------------
+  # Split string according to camel case
+  # ----------------------------------------------------------------------------
+  describe 'SPLIT ACCORDING TO CAMEL CASE' do
+    let(:string) { nil }
+    subject { string.split_camel }
+
+    context 'When string is Upper Camel Case,' do
+      let!(:string) { 'ThisIsWord' }
+      it { is_expected.to eq ['This', 'Is', 'Word'] }
+    end
+    
+    context 'When string is Lower Camel Case,' do
+      let!(:string) { 'thisIsWord' }
+      it { is_expected.to eq ['this', 'Is', 'Word'] }
+    end
+
+    context 'When string is not Camel Case,' do
+      let!(:string) { 'thisisword' }
+      it { is_expected.to eq ['thisisword'] }
+    end
+  end
+
+
+  # ----------------------------------------------------------------------------
+  # Check is_upper?
+  # ----------------------------------------------------------------------------
+  describe 'CHECK is_upper?' do
+    let(:character) { nil }
+    subject { character.is_upper? }
+
+    context 'when a character is upper case,' do
+      let(:character) { 'C' }
+      it { is_expected.to eq true }
+    end
+
+    context 'when a character is lower case,' do
+      let(:character) { 'c' }
+      it { is_expected.to eq false }
+    end
+  end
+
+
+  # ----------------------------------------------------------------------------
+  # Check is_lower?
+  # ----------------------------------------------------------------------------
+  describe 'CHECK is_lower?' do
+    let(:character) { nil }
+    subject { character.is_lower? }
+
+    context 'when a character is lower case,' do
+      let(:character) { 'c' }
+      it { is_expected.to eq true }
+    end
+
+    context 'when a character is uppser case,' do
+      let(:character) { 'C' }
+      it { is_expected.to eq false }
+    end
+  end
+
+
+  # ----------------------------------------------------------------------------
+  # Make first character lower case
+  # ----------------------------------------------------------------------------
+  describe 'MAKE FIRST CHARACTER LOWER CASE' do
+    let(:string) { nil }
+    subject { string.make_head_lower }
+
+    context 'When first character is Upper Case,' do 
+      let(:string) { 'ThisIsString' }
+      it { is_expected.to eq 'thisIsString' }
+    end
+
+    context 'When first character is Lower Case,' do 
+      let(:string) { 'thisIsString' }
+      it { is_expected.to eq 'thisIsString' }
+    end
+  end
+
 end
