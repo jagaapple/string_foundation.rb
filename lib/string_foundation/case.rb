@@ -6,10 +6,26 @@ class String
 
   # Convert to lowerCamelCase.
   def to_lcamel
+    ucamel = self.to_ucamel
+    ucamel[0].downcase + ucamel[1..-1]
   end
 
   # Convert to UpperCamelCase.
   def to_ucamel
+    if self.include?('_') || self.include?('-') || self.include?('.') || self.include?(' ')
+      str = self
+      str.split('_').map do |uw|
+        uw.split('-').map do |hw|
+          hw.split('.').map do |dw|
+            dw.split(' ').map do |sw|
+              sw.capitalize
+            end.join
+          end.join
+        end.join
+      end.join
+    else
+      self[0].upcase + self[1..-1]
+    end
   end
 
   # Convert to lower_snake_case.
@@ -18,6 +34,20 @@ class String
 
   # Convert to Upper_Snake_Case.
   def to_usnake
+    if self.include?('_') || self.include?('-') || self.include?('.') || self.include?(' ')
+      str = self
+      str.split('_').map do |uw|
+        uw.split('-').map do |hw|
+          hw.split('.').map do |dw|
+            dw.split(' ').map do |sw|
+              sw.capitalize
+            end.join('_')
+          end.join('_')
+        end.join('_')
+      end.join('_')
+    else
+      self[0].upcase + self[1..-1]
+    end
   end
 
   # Convert to lower-kebab-case.
