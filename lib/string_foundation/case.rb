@@ -95,10 +95,23 @@ class String
 
   # Convert to lower.dot.case.
   def to_ldot
+    udot = self.to_udot
+    udot.downcase
   end
 
   # Convert to Upper.Dot.Case.
   def to_udot
+    self.split('_').map do |uw|
+      uw.split('-').map do |hw|
+        hw.split('.').map do |dw|
+          dw.split(' ').map do |sw|
+            sw.split_camel.map do |cw|
+              cw.capitalize
+            end.join('.')
+          end.join('.')
+        end.join('.')
+      end.join('.')
+    end.join('.')
   end
 
   def split_camel
