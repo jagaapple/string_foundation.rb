@@ -12,20 +12,11 @@ class String
 
   # Convert to UpperCamelCase.
   def to_ucamel
-    if self.include?('_') || self.include?('-') || self.include?('.') || self.include?(' ')
-      str = self
-      str.split('_').map do |uw|
-        uw.split('-').map do |hw|
-          hw.split('.').map do |dw|
-            dw.split(' ').map do |sw|
-              sw.capitalize
-            end.join
-          end.join
-        end.join
+    self.split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map do |w|
+        w.capitalize
       end.join
-    else
-      self[0].upcase + self[1..-1]
-    end
+    end.join
   end
 
   # Convert to lower_snake_case.
@@ -36,16 +27,9 @@ class String
 
   # Convert to Upper_Snake_Case.
   def to_usnake
-    str = self
-    str.split('_').map do |uw|
-      uw.split('-').map do |hw|
-        hw.split('.').map do |dw|
-          dw.split(' ').map do |sw|
-            sw.split_camel.map do |cw|
-              cw.capitalize
-            end.join('_')
-          end.join('_')
-        end.join('_')
+    self.split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map do |w|
+        w.capitalize
       end.join('_')
     end.join('_')
   end
@@ -58,16 +42,9 @@ class String
 
   # Convert to Upper-Kebab-Case.
   def to_ukebab
-    str = self
-    str.split('_').map do |uw|
-      uw.split('-').map do |hw|
-        hw.split('.').map do |dw|
-          dw.split(' ').map do |sw|
-            sw.split_camel.map do |cw|
-              cw.capitalize
-            end.join('-')
-          end.join('-')
-        end.join('-')
+    self.split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map do |w|
+        w.capitalize
       end.join('-')
     end.join('-')
   end
@@ -80,15 +57,9 @@ class String
 
   # Convert to Upper Space Case.
   def to_uspace
-    self.split('_').map do |uw|
-      uw.split('-').map do |hw|
-        hw.split('.').map do |dw|
-          dw.split(' ').map do |sw|
-            sw.split_camel.map do |cw|
-              cw.capitalize
-            end.join(' ')
-          end.join(' ')
-        end.join(' ')
+    self.split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map do |w|
+        w.capitalize
       end.join(' ')
     end.join(' ')
   end
@@ -101,15 +72,9 @@ class String
 
   # Convert to Upper.Dot.Case.
   def to_udot
-    self.split('_').map do |uw|
-      uw.split('-').map do |hw|
-        hw.split('.').map do |dw|
-          dw.split(' ').map do |sw|
-            sw.split_camel.map do |cw|
-              cw.capitalize
-            end.join('.')
-          end.join('.')
-        end.join('.')
+    self.split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map do |w|
+        w.capitalize
       end.join('.')
     end.join('.')
   end
