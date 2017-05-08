@@ -116,17 +116,7 @@ class String
 
   # Split string according to camel case.
   def split_camel
-    words = []
-    word = []
-    self.each_char do |c|  
-      if c.is_upper?
-        words << word.join if not word.size == 0
-        word = [c]
-      else
-        word << c
-      end
-    end
-    words << word.join
+    self.split /(?=[A-Z])/
   end
 
   # Whether a character is uppder case or not.
