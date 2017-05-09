@@ -2,7 +2,7 @@
 # LIB - STRING FOUNDATION - CONVERT
 # ==============================================================================
 # frozen_string_literal: true
-require_relative 'convertable'
+require_relative 'convertible'
 require_relative 'like'
 require_relative 'with'
 class String

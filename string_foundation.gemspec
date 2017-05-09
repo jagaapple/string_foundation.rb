@@ -12,8 +12,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Brushdown']
   spec.email         = ['dev@brushdown.com']
   spec.homepage      = 'https://github.com/brushdown/string_foundation.rb'
-  spec.summary       = 'A library for extending Ruby string class.'
-  spec.description   = 'String Foundation is a Ruby library for providing useful methods to Ruby String class.'
+  spec.summary       = 'A library that extends Ruby string class.'
+  spec.description   = 'String Foundation is a Ruby library that provides useful methods for the Ruby string class.'
   spec.license       = 'MIT'
 
   spec.files         = Dir['**/*'].keep_if { |file| File.file?(file) }
