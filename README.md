@@ -301,7 +301,7 @@ methods have.
 
 ## Contributing to String Foundation
 Bug reports and pull requests are welcome on GitHub at
-[https://github.com/brushdown/string_foundation](https://github.com/brushdown/string_foundation).
+[https://github.com/brushdown/string_foundation.rb](https://github.com/brushdown/string_foundation.rb).
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org)
 code of conduct.
