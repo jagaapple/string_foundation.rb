@@ -36,6 +36,7 @@ class.
 - [The Like Methods](#the-like-methods)
   - [Like Integer](#like-integer)
   - [Like Float](#like-float)
+- [The Case Methods](#the-case-methods)
 - [Contributing to String Foundation](#contributing-to-string-foundation)
 - [License](#license)
 
@@ -271,6 +272,30 @@ is regarded as an integral number. These method return `true` or `false` .
 
 'abc'.like_f? #=> false
 '2x'.like_f?  #=> false
+```
+
+
+## The Case Methods
+The case methods covnert to a case style, such as
+`lowerCamelCase` and `lower_snake_case` . The following is methods the case
+methods have.
+
+| METHOD NAME | CASE STYLE                    | EXAMPLE            |
+|:------------|:------------------------------|:-------------------|
+| `to_lcamel` | Lower Camel Case              | `weAreBrushdown`   |
+| `to_ucamel` | Upper Camel Case              | `WeAreBrushdown`   |
+| `to_lsnake` | Lower Snake Case              | `we_are_brushdown` |
+| `to_usnake` | Upper Snake Case ()           | `We_Are_Brushdown` |
+| `to_lkebab` | Lower Kebab Case (Chain Case) | `we-are-brushdown` |
+| `to_ukebab` | Upper Kebab Case (Train Case) | `We-Are-Brushdown` |
+| `to_lspace` | Lower Space Case (Lower Case) | `we are brushdown` |
+| `to_uspace` | Upper Space Case (Start Case) | `We Are Brushdown` |
+| `to_ldot`   | Lower Dot Case                | `we.are.brushdown` |
+| `to_udot`   | Upper Dot Case                | `We.Are.Brushdown` |
+
+```ruby
+'user_id'.to_lcamel   #=> 'userId'
+'createdAt'.to_lsnake #=> 'created_at'
 ```
 
 
