@@ -1,5 +1,5 @@
 # ==============================================================================
-# LIB - STRING FOUNDATION - CONVERTABLE
+# LIB - STRING FOUNDATION - CONVERTIBLE
 # ==============================================================================
 # frozen_string_literal: true
 require_relative 'with'

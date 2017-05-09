@@ -11,8 +11,8 @@
 [![license](https://img.shields.io/github/license/brushdown/string_foundation.svg)](https://opensource.org/licenses/MIT)
 [![@jagaapple](https://img.shields.io/badge/contact-%40jagaapple-blue.svg)](https://twitter.com/jagaapple)
 
-String Foundation is a Ruby library for providing useful methods to Ruby String
-class.
+String Foundation is a Ruby library that provides useful methods for the Ruby
+string class.
 
 
 ## Table of Contents
@@ -23,7 +23,7 @@ class.
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
-- [The Convertable Methods](#the-convertable-methods)
+- [The Convertible Methods](#the-convertible-methods)
   - [To Integer](#to-integer)
   - [To Float](#to-float)
   - [To TrueClass / FalseClass](#to-trueclass--falseclass)
@@ -64,17 +64,17 @@ gem 'string_foundation'
 And then run `bundle install` .
 
 ### Basic Usage
-The following is a part of String Foundation provides.
+The following is a sample of what String Foundation provides.
 
 ```ruby
-# Check for convertable.
+# Check for convertible.
 '123'.to_i?  #=> true
 'x123'.to_i? #=> false
 
 # Remove leading zeros.
 '00000123'.without_leading_zeros #=> '123'
 
-# Convert a value to appropriate type.
+# Convert a value to the appropriate type.
 'false'.to_pretty #=> false
 '.5'.to_pretty    #=> 0.5
 
@@ -83,18 +83,17 @@ The following is a part of String Foundation provides.
 ```
 
 
-## The Convertable Methods
-The convertable methods provide to check whether or not to be possible to convert
-a string object to other class objects. These method return `true` or `false` .
+## The Convertible Methods
+The Convertible Methods enable you to check whether or not a string can be
+converted to another class object. These methods return `true` or `false` .
 
 ### To Integer
-`to_i?` method is to check convertable to an Integer object (including Fixnum
-and Bignum classes).
-This returns `true` only when an argument is convertable to an Integer object, so
-an argument is not needed to be an integral number. If you set a floating point number
-as an argument that should be passed to this method, this returns `true` because of
-be converted an Integer object using `to_i` Ruby built-in method (For example,
-`'0.4'.to_i` returns `0` ).
+The `to_i?` method checks whether a string can be converted to an Integer
+(including Fixnum and Bignum classes). This returns `true` only if an argument
+is convertible, therefore it is not required for the argument to be an integral
+number. If you pass a floating point number as an argument to this method, it will
+return `true` because it can be converted using the `to_i` Ruby built-in method
+(for example, `'0.4'.to_i` returns `0` ).
 
 ```ruby
 '123'.to_i? #=> true
@@ -105,19 +104,18 @@ be converted an Integer object using `to_i` Ruby built-in method (For example,
 '2x'.to_i?  #=> false
 ```
 
-Also when an argument with leading-zeros, they will be removed before checking.
+If an argument has leading zeros, they will be removed before checking.
 
 ```ruby
 '00000123'.to_i? #=> true
 ```
 
 ### To Float
-`to_f?` method is to check convertable to Float class.
-This returns `true` only when an argument is convertable to Float class, so
-an argument is not needed to be a floating point number. If you set an integral number
-as an argument that should be passed to this method, this returns `true` because of
-be converted Float object using `to_f` Ruby built-in method (For example, `'2'.to_f`
-returns `2.0` ).
+The `to_f?` method is to check convertibility to the Float class. This returns
+`true` only when an argument is convertible, therefore it is not required for the
+argument to be a floating point number. If you pass an integral number as an
+argument to this method, it will return `true` because it can be converted using
+the `to_f` Ruby built-in method (for example, `'2'.to_f` returns `2.0` ).
 
 ```ruby
 '0.3'.to_f? #=> true
@@ -130,8 +128,9 @@ returns `2.0` ).
 
 
 ### To TrueClass / FalseClass
-`to_bool?` method is to check convertable to TrueClass or FalseClass.
-This returns `true` or `false` only when the string is `'true'` or `'false'` .
+The `to_bool?` method checks whether a string is convertible to TrueClass or
+FalseClass. This returns `true` or `false` only when the string is `'true'` or
+`'false'` .
 
 ```ruby
 'true'.to_bool?  #=> true
@@ -141,9 +140,9 @@ This returns `true` or `false` only when the string is `'true'` or `'false'` .
 '123'.to_bool?   #=> false
 ```
 
-Also String Foundation provides to check convertable to "Booly" (truthy or falsy).
-This returns `true` only when the string is a positive number or `'true'` ,
-an empty string, otherwise returns `false` .
+String Foundation also provides a check for a string's convertibility to a "Booly"
+(truthy or falsy). This returns `true` only when the string is a positive number,
+`'true'` , or an empty string. If not, it returns `false` .
 
 ```ruby
 'true'.to_booly? #=> true
@@ -156,10 +155,11 @@ an empty string, otherwise returns `false` .
 
 
 ## The With Methods
-The with methods provide to append or remove specific characters from a string object.
+The With Methods provide you with ways to append or remove specific characters
+from a String object.
 
 ### Remove Leading Zeros (Zero Padding)
-`without_leading_zeros` method removes leading zeros (it is called "zero padding").
+The `without_leading_zeros` method removes leading zeros (called "zero padding").
 This supports a floating point number and a string starting with a plus or minus sign.
 
 ```ruby
@@ -171,14 +171,15 @@ This supports a floating point number and a string starting with a plus or minus
 
 
 ## The Convert Methods
-The convert methods provide to convert to a specific class object. The Ruby built-in
-methods are included converting from a string to an Integer object or an Float
-object, but not included converting to a TrueClass / FalseClass object and a proper
-class object. The Convert Methods can them.
+The Convert Methods enable you to convert to a specific class object. While Ruby
+built-in methods include conversion from a String object to an Integer object or
+a Float object, they do not include conversion to a TrueClass / FalseClass object
+or a proper class object. The Convert Methods make it easy to convert to these
+excluded classes.
 
 ### To TrueClass / FalseClass
-`to_bool` method is to convert from a "true" or "false" string to `true` or `false`,
-otherwise this raise TypeError.
+The `to_bool` method is for converting from a `'true'` or `'false'` string to `true`
+or `false` , otherwise it will raise a `TypeError` .
 
 ```ruby
 'true'.to_bool  #=> true
@@ -191,8 +192,9 @@ otherwise this raise TypeError.
 ''.to_bool    #=> TypeError
 ```
 
-If you want to convert a booly string, you can use `to_booly` method. When a string
-is a string "true" or positive number, this method return `true` , otherwise `false` .
+If you want to convert a Booly string, you can use the `to_booly` method. When a
+string is `'true'` or a positive number, this method will return `true` . Otherwise
+it will return `false` .
 
 ```ruby
 'true'.to_booly  #=> true
@@ -206,10 +208,10 @@ is a string "true" or positive number, this method return `true` , otherwise `fa
 ```
 
 ### To Proper Class
-`to_pretty` method is so powerful. This method can convert to a proper class, for
-example, returns TrueClass `true` when a string is "true", or returns Integer `1`
-when a string is "1".
-Also this returns nil when a string is an empty string.
+The `to_pretty` method is powerful. This method can convert to a proper class,
+for example, it will return a TrueClass `true` when a string is `'true'`, or returns
+an Integer `1` when a string is `'1'`.
+Also this returns `nil` when a string is an empty string.
 
 ```ruby
 '1'.to_pretty      #=> 1
@@ -226,16 +228,17 @@ Also this returns nil when a string is an empty string.
 ```
 
 ### Newlines To Characters
-`nl_to` method is to convert from a string has newlines to specific characters.
-`nl2` method is alias for `nl_to` .
+The `nl_to` method converts a string with newlines to its specific characters.
+The `nl2` method is an alias for `nl_to` .
 
 ```ruby
 "Hi!\nWe are Brushdown.".nl_to(' / ') #=> 'Hi! / We are Brushdown.'
 "Hi!\nWe are Brushdown.".nl2(' / ')   #=> 'Hi! / We are Brushdown.'
 ```
 
-`nl_to_br` method is to convert from a string has newlines to a HTML tag `<br>`
-for break line. `nl2br` method is alias for `nl_to_br` .
+The `nl_to_br` method replaces the newlines in a string with HTML tag `<br>` for
+break line.
+The `nl2br` method is an alias for `nl_to_br` .
 
 ```ruby
 "Hi!\nWe are Brushdown.".nl_to_br #=> 'Hi!<br>We are Brushdown.'
@@ -244,12 +247,16 @@ for break line. `nl2br` method is alias for `nl_to_br` .
 
 
 ## The Like Methods
-The like methods provide to check whether a string is an integral number or a
-floating point number. These method ignore leading zeros, so the string `000123`
+The Like Methods provide to check whether a string is an integral number or a
+floating point number. These method ignore leading zeros, so the string `'000123'`
 is regarded as an integral number. These method return `true` or `false` .
 
+The Like Methods check whether a string is an integral number or a floating point
+number. These methods ignore leading zeros, so the string `000123` is regarded
+as an integral number. These methods return `true` or `false` .
+
 ### Like Integer
-`like_i?` method is to check whether a string is an integral number.
+The `like_i?` method checks whether a string is an integral number.
 
 ```ruby
 '123'.like_i? #=> true
@@ -262,7 +269,7 @@ is regarded as an integral number. These method return `true` or `false` .
 ```
 
 ### Like Float
-`like_f?` method is to check whether a string is a floating point number.
+The `like_f?` method checks whether a string is a floating point number.
 
 ```ruby
 '123'.like_f? #=> false
@@ -276,9 +283,8 @@ is regarded as an integral number. These method return `true` or `false` .
 
 
 ## The Case Methods
-The case methods covnert to a case style, such as
-`lowerCamelCase` and `lower_snake_case` . The following is methods the case
-methods have.
+The Case Methods convert to a case style, such as `lowerCamelCase` and
+`lower_snake_case` . The following methods are available.
 
 | METHOD NAME | CASE STYLE                    | EXAMPLE            |
 |:------------|:------------------------------|:-------------------|
@@ -301,7 +307,7 @@ methods have.
 
 ## Contributing to String Foundation
 Bug reports and pull requests are welcome on GitHub at
-[https://github.com/brushdown/string_foundation](https://github.com/brushdown/string_foundation).
+[https://github.com/brushdown/string_foundation.rb](https://github.com/brushdown/string_foundation.rb).
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org)
 code of conduct.

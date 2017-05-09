@@ -1,13 +1,13 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - CONVERTABLE
+# SPEC - STRING FOUNDATION - CONVERTIBLE
 # ==============================================================================
 # frozen_string_literal: true
-describe '[ Convertable Methods ]' do
+describe '[ Convertible Methods ]' do
 
   # ----------------------------------------------------------------------------
-  # Check Convertable To Integer
+  # Check Convertible To Integer
   # ----------------------------------------------------------------------------
-  describe 'CHECK CONVERTABLE TO INTEGER' do
+  describe 'CHECK CONVERTIBLE TO INTEGER' do
     let(:string) { nil }
     subject { string.to_i? }
 
@@ -100,9 +100,9 @@ describe '[ Convertable Methods ]' do
 
 
   # ----------------------------------------------------------------------------
-  # Check Convertable To Float
+  # Check Convertible To Float
   # ----------------------------------------------------------------------------
-  describe 'CHECK CONVERTABLE TO FLOAT' do
+  describe 'CHECK CONVERTIBLE TO FLOAT' do
     let(:string) { nil }
     subject { string.to_f? }
 
@@ -195,9 +195,9 @@ describe '[ Convertable Methods ]' do
 
 
   # ----------------------------------------------------------------------------
-  # Check Convertable To Boolean
+  # Check Convertible To Boolean
   # ----------------------------------------------------------------------------
-  describe 'CHECK CONVERTABLE TO BOOLEAN' do
+  describe 'CHECK CONVERTIBLE TO BOOLEAN' do
     let(:string) { nil }
     subject { string.to_bool? }
 
@@ -240,9 +240,9 @@ describe '[ Convertable Methods ]' do
 
 
   # ----------------------------------------------------------------------------
-  # Check Convertable To Booly
+  # Check Convertaile To Booly
   # ----------------------------------------------------------------------------
-  describe 'CHECK CONVERTABLE TO BOOLYs' do
+  describe 'CHECK CONVERTIBLE TO BOOLYs' do
     let(:string) { nil }
     subject { string.to_booly? }
 

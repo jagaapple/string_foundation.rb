@@ -2,7 +2,7 @@
 # LIB - STRING FOUNDATION - LIKE
 # ==============================================================================
 # frozen_string_literal: true
-require_relative 'convertable'
+require_relative 'convertible'
 class String
 
   # Check whether a string is an integral number.
