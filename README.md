@@ -5,10 +5,10 @@
 
 ---
 
-[![CircleCI](https://img.shields.io/circleci/project/github/brushdown/string_foundation/master.svg)](https://circleci.com/gh/brushdown/string_foundation)
-[![codecov](https://img.shields.io/codecov/c/github/brushdown/string_foundation/master.svg)](https://codecov.io/gh/brushdown/string_foundation)
+[![CircleCI](https://img.shields.io/circleci/project/github/brushdown/string_foundation.rb/master.svg)](https://circleci.com/gh/brushdown/string_foundation.rb)
+[![codecov](https://img.shields.io/codecov/c/github/brushdown/string_foundation.rb/master.svg)](https://codecov.io/gh/brushdown/string_foundation.rb)
 [![Gem](https://img.shields.io/gem/v/string_foundation.svg)](https://rubygems.org/gems/string_foundation/)
-[![license](https://img.shields.io/github/license/brushdown/string_foundation.svg)](https://opensource.org/licenses/MIT)
+[![license](https://img.shields.io/github/license/brushdown/string_foundation.rb.svg)](https://opensource.org/licenses/MIT)
 [![@jagaapple](https://img.shields.io/badge/contact-%40jagaapple-blue.svg)](https://twitter.com/jagaapple)
 
 String Foundation is a Ruby library that provides useful methods for the Ruby
