@@ -158,7 +158,7 @@ describe '[ Convert Methods ]' do
     context 'when a string is an empty string,' do
       let(:string) { '' }
 
-      it { is_expected.to eq(nil) }
+      it { is_expected.to be_nil }
     end
   end
 
