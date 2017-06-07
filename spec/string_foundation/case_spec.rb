@@ -21,7 +21,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Convert to lowerCamelCase
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO lowerCamelCase' do
+  describe 'CONVERT TO lowerCamelCase ::' do
     subject { string.to_lcamel }
 
     # Define shared examples.
@@ -101,7 +101,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Convert to UpperCamelCase
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO UpperCamelCase' do
+  describe 'CONVERT TO UpperCamelCase ::' do
     subject { string.to_ucamel }
 
     # Define shared examples.
@@ -181,7 +181,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Convert to lower_snake_case
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO lower_snake_case' do
+  describe 'CONVERT TO lower_snake_case ::' do
     subject { string.to_lsnake }
 
     # Define shared examples.
@@ -261,7 +261,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Convert to Upper_Snake_Case
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO Upper_Snake_Case' do
+  describe 'CONVERT TO Upper_Snake_Case ::' do
     subject { string.to_usnake }
 
     # Define shared examples.
@@ -341,7 +341,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Convert to lower-kebab-case
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO lower-kebab-case' do
+  describe 'CONVERT TO lower-kebab-case ::' do
     subject { string.to_lkebab }
 
     # Define shared examples.
@@ -421,7 +421,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Convert to Upper-Kebab-Case
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO Upper-Kebab-Case' do
+  describe 'CONVERT TO Upper-Kebab-Case ::' do
     subject { string.to_ukebab }
 
     # Define shared examples.
@@ -501,7 +501,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Convert to lower space case
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO lower space case' do
+  describe 'CONVERT TO lower space case ::' do
     subject { string.to_lspace }
 
     # Define shared examples.
@@ -581,7 +581,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Convert to Upper Space Case
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO Upper Space Case' do
+  describe 'CONVERT TO Upper Space Case ::' do
     subject { string.to_uspace }
 
     # Define shared examples.
@@ -661,7 +661,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Convert to lower.dot.case
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO lower.dot.case' do
+  describe 'CONVERT TO lower.dot.case ::' do
     subject { string.to_ldot }
 
     # Define shared examples.
@@ -739,9 +739,12 @@ describe '[ Case Methods ]' do
 
 
   # ----------------------------------------------------------------------------
+  # Private
+  # ----------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------
   # Convert to Upper.Dot.Case
   # ----------------------------------------------------------------------------
-  describe 'CONVERT TO Upper.Dot.Case' do
+  describe 'CONVERT TO Upper.Dot.Case ::' do
     subject { string.to_udot }
 
     # Define shared examples.
@@ -819,9 +822,9 @@ describe '[ Case Methods ]' do
 
 
   # ----------------------------------------------------------------------------
-  # Split string according to camel case
+  # Split String According to Camel Case
   # ----------------------------------------------------------------------------
-  describe 'SPLIT ACCORDING TO CAMEL CASE' do
+  describe 'SPLIT ACCORDING TO CAMEL CASE ::' do
     let(:string) { nil }
     subject { string.split_camel }
 
@@ -845,7 +848,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Check is_upper?
   # ----------------------------------------------------------------------------
-  describe 'CHECK is_upper?' do
+  describe 'CHECK is_upper? ::' do
     let(:character) { nil }
     subject { character.is_upper? }
 
@@ -864,7 +867,7 @@ describe '[ Case Methods ]' do
   # ----------------------------------------------------------------------------
   # Check is_lower?
   # ----------------------------------------------------------------------------
-  describe 'CHECK is_lower?' do
+  describe 'CHECK is_lower? ::' do
     let(:character) { nil }
     subject { character.is_lower? }
 
@@ -881,9 +884,9 @@ describe '[ Case Methods ]' do
 
 
   # ----------------------------------------------------------------------------
-  # Make first character lower case
+  # Make First Character Lower Case
   # ----------------------------------------------------------------------------
-  describe 'MAKE FIRST CHARACTER LOWER CASE' do
+  describe 'MAKE FIRST CHARACTER LOWER CASE ::' do
     let(:string) { nil }
     subject { string.make_head_lower }
 

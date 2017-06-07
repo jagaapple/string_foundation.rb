@@ -79,6 +79,12 @@ class String
     end.join('.')
   end
 
+
+  # ----------------------------------------------------------------------------
+  # Private
+  # ----------------------------------------------------------------------------
+  # These methods are an internal, private and should not be used in applications.
+  # ----------------------------------------------------------------------------
   # Split string according to camel case.
   def split_camel
     self.split /(?=[A-Z])/
