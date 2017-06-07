@@ -829,7 +829,7 @@ describe '[ Case Methods ]' do
       let!(:string) { 'ThisIsWord' }
       it { is_expected.to eq ['This', 'Is', 'Word'] }
     end
-    
+
     context 'When string is Lower Camel Case,' do
       let!(:string) { 'thisIsWord' }
       it { is_expected.to eq ['this', 'Is', 'Word'] }
@@ -851,12 +851,12 @@ describe '[ Case Methods ]' do
 
     context 'when a character is upper case,' do
       let(:character) { 'C' }
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context 'when a character is lower case,' do
       let(:character) { 'c' }
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
   end
 
@@ -870,12 +870,12 @@ describe '[ Case Methods ]' do
 
     context 'when a character is lower case,' do
       let(:character) { 'c' }
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context 'when a character is uppser case,' do
       let(:character) { 'C' }
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
   end
 
@@ -887,12 +887,12 @@ describe '[ Case Methods ]' do
     let(:string) { nil }
     subject { string.make_head_lower }
 
-    context 'When first character is Upper Case,' do 
+    context 'When first character is Upper Case,' do
       let(:string) { 'ThisIsString' }
       it { is_expected.to eq 'thisIsString' }
     end
 
-    context 'When first character is Lower Case,' do 
+    context 'When first character is Lower Case,' do
       let(:string) { 'thisIsString' }
       it { is_expected.to eq 'thisIsString' }
     end
