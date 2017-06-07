@@ -34,5 +34,6 @@ Gemfile.lock
 
 # Generated files created by Ruby Gems.
 tmp
+pkg
 coverage
 .rspec_status
