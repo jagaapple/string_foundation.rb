@@ -15,19 +15,19 @@ describe '[ Like Methods ]' do
       context 'and it is a positive number,' do
         let(:string) { '123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context 'and it is a positive number with a sign,' do
         let(:string) { '+123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context 'and it is a negative number,' do
         let(:string) { '-5' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
     end
 
@@ -35,19 +35,19 @@ describe '[ Like Methods ]' do
       context 'and it is a positive number,' do
         let(:string) { '0.123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
 
       context 'and it is a positive number with a sign,' do
         let(:string) { '+0.123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
 
       context 'and it is a negative number,' do
         let(:string) { '-5.123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
     end
 
@@ -55,19 +55,19 @@ describe '[ Like Methods ]' do
       context 'and it is a positive number,' do
         let(:string) { '.123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
 
       context 'and it is a positive number with a sign,' do
         let(:string) { '+.123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
 
       context 'and it is a negative number,' do
         let(:string) { '-.123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
     end
 
@@ -75,38 +75,38 @@ describe '[ Like Methods ]' do
       context 'and it is a positive number,' do
         let(:string) { '00000123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context 'and it is a positive number with a sign,' do
         let(:string) { '+00000123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context 'and it is a negative number,' do
         let(:string) { '-00000123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
     end
 
     context 'when a string is 0,' do
       let(:string) { '0' }
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context 'when a string is 0.0,' do
       let(:string) { '0.0' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     context 'when a string is not a number,' do
       let(:string) { 'abc' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
   end
 
@@ -121,19 +121,19 @@ describe '[ Like Methods ]' do
       context 'and it is a positive number,' do
         let(:string) { '123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
 
       context 'and it is a positive number with a sign,' do
         let(:string) { '+123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
 
       context 'and it is a negative number,' do
         let(:string) { '-5' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
     end
 
@@ -141,19 +141,19 @@ describe '[ Like Methods ]' do
       context 'and it is a positive number,' do
         let(:string) { '0.123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context 'and it is a positive number with a sign,' do
         let(:string) { '+0.123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context 'and it is a negative number,' do
         let(:string) { '-5.123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
     end
 
@@ -161,19 +161,19 @@ describe '[ Like Methods ]' do
       context 'and it is a positive number,' do
         let(:string) { '.123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context 'and it is a positive number with a sign,' do
         let(:string) { '+.123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
 
       context 'and it is a negative number,' do
         let(:string) { '-.123' }
 
-        it { is_expected.to eq true }
+        it { is_expected.to be true }
       end
     end
 
@@ -181,38 +181,38 @@ describe '[ Like Methods ]' do
       context 'and it is a positive number,' do
         let(:string) { '00000123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
 
       context 'and it is a positive number with a sign,' do
         let(:string) { '+00000123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
 
       context 'and it is a negative number,' do
         let(:string) { '-00000123' }
 
-        it { is_expected.to eq false }
+        it { is_expected.to be false }
       end
     end
 
     context 'when a string is 0,' do
       let(:string) { '0' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     context 'when a string is 0.0,' do
       let(:string) { '0.0' }
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context 'when a string is not a number,' do
       let(:string) { 'abc' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
   end
 end
