@@ -110,31 +110,31 @@ describe '[ Convert Methods ]' do
     context 'when a string is "0",' do
       let(:string) { '0' }
 
-      it { is_expected.to eq 0 }
+      it { is_expected.to eq(0) }
     end
 
     context 'when a string is "1",' do
       let(:string) { '1' }
 
-      it { is_expected.to eq 1 }
+      it { is_expected.to eq(1) }
     end
 
     context 'when a string is "000123",' do
       let(:string) { '000123' }
 
-      it { is_expected.to eq 123 }
+      it { is_expected.to eq(123) }
     end
 
     context 'when a string is "0.0",' do
       let(:string) { '0.0' }
 
-      it { is_expected.to eq 0.0 }
+      it { is_expected.to eq(0.0) }
     end
 
     context 'when a string is "000.00123",' do
       let(:string) { '000.00123' }
 
-      it { is_expected.to eq 0.00123 }
+      it { is_expected.to eq(0.00123) }
     end
 
     context 'when a string is "true",' do
@@ -152,13 +152,13 @@ describe '[ Convert Methods ]' do
     context 'when a string is "dummy",' do
       let(:string) { 'dummy' }
 
-      it { is_expected.to eq string }
+      it { is_expected.to eq(string) }
     end
 
     context 'when a string is an empty string,' do
       let(:string) { '' }
 
-      it { is_expected.to eq nil }
+      it { is_expected.to eq(nil) }
     end
   end
 
@@ -172,19 +172,19 @@ describe '[ Convert Methods ]' do
     subject { string.nl_to(char) }
 
     context 'when a string has newlines "\n",' do
-      it { is_expected.to eq 'We are Brushdown.<br>We are Brushdown.' }
+      it { is_expected.to eq('We are Brushdown.<br>We are Brushdown.') }
     end
 
     context 'when a string has newlines "\r\n",' do
       let(:string) { "We are Brushdown.\r\nWe are Brushdown." }
 
-      it { is_expected.to eq 'We are Brushdown.<br>We are Brushdown.' }
+      it { is_expected.to eq('We are Brushdown.<br>We are Brushdown.') }
     end
 
     context 'when a string does not have newlines,' do
       let(:string) { "We are Brushdown. We are Brushdown." }
 
-      it { is_expected.to eq string }
+      it { is_expected.to eq(string) }
     end
 
     context 'when an argument is not set,' do
@@ -196,13 +196,13 @@ describe '[ Convert Methods ]' do
     context 'when an argument is nil,' do
       let(:char) { nil }
 
-      it { is_expected.to eq 'We are Brushdown.We are Brushdown.' }
+      it { is_expected.to eq('We are Brushdown.We are Brushdown.') }
     end
 
     context 'when an argument is an empty string,' do
       let(:char) { '' }
 
-      it { is_expected.to eq 'We are Brushdown.We are Brushdown.' }
+      it { is_expected.to eq('We are Brushdown.We are Brushdown.') }
     end
   end
 
@@ -215,19 +215,19 @@ describe '[ Convert Methods ]' do
     subject { string.nl_to_br }
 
     context 'when a string has newlines "\n",' do
-      it { is_expected.to eq 'We are Brushdown.<br>We are Brushdown.' }
+      it { is_expected.to eq('We are Brushdown.<br>We are Brushdown.') }
     end
 
     context 'when a string has newlines "\r\n",' do
       let(:string) { "We are Brushdown.\r\nWe are Brushdown." }
 
-      it { is_expected.to eq 'We are Brushdown.<br>We are Brushdown.' }
+      it { is_expected.to eq('We are Brushdown.<br>We are Brushdown.') }
     end
 
     context 'when a string does not have newlines,' do
       let(:string) { "We are Brushdown. We are Brushdown." }
 
-      it { is_expected.to eq string }
+      it { is_expected.to eq(string) }
     end
   end
 
