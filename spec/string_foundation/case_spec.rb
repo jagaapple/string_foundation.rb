@@ -27,14 +27,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to lowerCamelCase' do
-      it { is_expected.to eq 'weAreBrushdown' }
+      it { is_expected.to eq('weAreBrushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'string' }
+      it { is_expected.to eq('string') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -107,14 +107,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to UpperCamelCase' do
-      it { is_expected.to eq 'WeAreBrushdown' }
+      it { is_expected.to eq('WeAreBrushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'String' }
+      it { is_expected.to eq('String') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -187,14 +187,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to lower_snake_case' do
-      it { is_expected.to eq 'we_are_brushdown' }
+      it { is_expected.to eq('we_are_brushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'string' }
+      it { is_expected.to eq('string') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -267,14 +267,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to Upper_Snake_Case' do
-      it { is_expected.to eq 'We_Are_Brushdown' }
+      it { is_expected.to eq('We_Are_Brushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'String' }
+      it { is_expected.to eq('String') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -347,14 +347,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to lower-kebab-case' do
-      it { is_expected.to eq 'we-are-brushdown' }
+      it { is_expected.to eq('we-are-brushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'string' }
+      it { is_expected.to eq('string') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -427,14 +427,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to Upper-Kebab-Case' do
-      it { is_expected.to eq 'We-Are-Brushdown' }
+      it { is_expected.to eq('We-Are-Brushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'String' }
+      it { is_expected.to eq('String') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -507,14 +507,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to lower space case' do
-      it { is_expected.to eq 'we are brushdown' }
+      it { is_expected.to eq('we are brushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'string' }
+      it { is_expected.to eq('string') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -587,14 +587,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to Upper Space Case' do
-      it { is_expected.to eq 'We Are Brushdown' }
+      it { is_expected.to eq('We Are Brushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'String' }
+      it { is_expected.to eq('String') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -667,14 +667,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to lower.dot.case' do
-      it { is_expected.to eq 'we.are.brushdown' }
+      it { is_expected.to eq('we.are.brushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'string' }
+      it { is_expected.to eq('string') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -747,14 +747,14 @@ describe '[ Case Methods ]' do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples 'be converted to Upper.Dot.Case' do
-      it { is_expected.to eq 'We.Are.Brushdown' }
+      it { is_expected.to eq('We.Are.Brushdown') }
     end
     # --------------------------------------------------------------------------
 
     context 'When a string has one word,' do
       include_context 'one word'
 
-      it { is_expected.to eq 'String' }
+      it { is_expected.to eq('String') }
     end
 
     context 'When a string lowerCamelCase,' do
@@ -827,17 +827,17 @@ describe '[ Case Methods ]' do
 
     context 'When string is Upper Camel Case,' do
       let!(:string) { 'ThisIsWord' }
-      it { is_expected.to eq ['This', 'Is', 'Word'] }
+      it { is_expected.to eq(['This', 'Is', 'Word']) }
     end
 
     context 'When string is Lower Camel Case,' do
       let!(:string) { 'thisIsWord' }
-      it { is_expected.to eq ['this', 'Is', 'Word'] }
+      it { is_expected.to eq(['this', 'Is', 'Word']) }
     end
 
     context 'When string is not Camel Case,' do
       let!(:string) { 'thisisword' }
-      it { is_expected.to eq ['thisisword'] }
+      it { is_expected.to eq(['thisisword']) }
     end
   end
 
@@ -889,12 +889,12 @@ describe '[ Case Methods ]' do
 
     context 'When first character is Upper Case,' do
       let(:string) { 'ThisIsString' }
-      it { is_expected.to eq 'thisIsString' }
+      it { is_expected.to eq('thisIsString') }
     end
 
     context 'When first character is Lower Case,' do
       let(:string) { 'thisIsString' }
-      it { is_expected.to eq 'thisIsString' }
+      it { is_expected.to eq('thisIsString') }
     end
   end
 
