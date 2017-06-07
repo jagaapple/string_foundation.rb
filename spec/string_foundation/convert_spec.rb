@@ -14,13 +14,13 @@ describe '[ Convert Methods ]' do
     context 'when a string is "true",' do
       let(:string) { 'true' }
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context 'when a string is "false",' do
       let(:string) { 'false' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     context 'when a string is invalid,' do
@@ -41,13 +41,13 @@ describe '[ Convert Methods ]' do
     context 'when a string is "true",' do
       let(:string) { 'true' }
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context 'when a string is "false",' do
       let(:string) { 'false' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     context 'when a string is invalid,' do
@@ -59,43 +59,43 @@ describe '[ Convert Methods ]' do
     context 'when a string is a positive integral number,' do
       let(:string) { '1' }
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context 'when a string is a negative integral number,' do
       let(:string) { '-1' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     context 'when a string is a positive floating point number,' do
       let(:string) { '0.1' }
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context 'when a string is a negative floating point number,' do
       let(:string) { '-0.1' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     context 'when a string is 0,' do
       let(:string) { '0' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     context 'when a string is 0.0,' do
       let(:string) { '0.0' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     context 'when a string is an empty string,' do
       let(:string) { '' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
   end
 
@@ -140,13 +140,13 @@ describe '[ Convert Methods ]' do
     context 'when a string is "true",' do
       let(:string) { 'true' }
 
-      it { is_expected.to eq true }
+      it { is_expected.to be true }
     end
 
     context 'when a string is "false",' do
       let(:string) { 'false' }
 
-      it { is_expected.to eq false }
+      it { is_expected.to be false }
     end
 
     context 'when a string is "dummy",' do
