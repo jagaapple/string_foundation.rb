@@ -58,7 +58,7 @@ $ gem install string_foundation
 If you are using Bundler, add this line to your application's Gemfile:
 
 ```ruby
-gem 'string_foundation'
+gem "string_foundation"
 ```
 
 And then run `bundle install` .
@@ -68,18 +68,18 @@ The following is a sample of what String Foundation provides.
 
 ```ruby
 # Check for convertible.
-'123'.to_i?  #=> true
-'x123'.to_i? #=> false
+"123".to_i?  #=> true
+"x123".to_i? #=> false
 
 # Remove leading zeros.
-'00000123'.without_leading_zeros #=> '123'
+"00000123".without_leading_zeros #=> "123"
 
 # Convert a value to the appropriate type.
-'false'.to_pretty #=> false
-'.5'.to_pretty    #=> 0.5
+"false".to_pretty #=> false
+".5".to_pretty    #=> 0.5
 
 # Convert to lowerCamelCase.
-'user_id'.to_lcamel #=> 'userId'
+"user_id".to_lcamel #=> "userId"
 ```
 
 
@@ -93,21 +93,21 @@ The `to_i?` method checks whether a string can be converted to an Integer
 is convertible, therefore it is not required for the argument to be an integral
 number. If you pass a floating point number as an argument to this method, it will
 return `true` because it can be converted using the `to_i` Ruby built-in method
-(for example, `'0.4'.to_i` returns `0` ).
+(for example, `"0.4".to_i` returns `0` ).
 
 ```ruby
-'123'.to_i? #=> true
-'0.3'.to_i? #=> true
-'.2'.to_i?  #=> true
+"123".to_i? #=> true
+"0.3".to_i? #=> true
+".2".to_i?  #=> true
 
-'abc'.to_i? #=> false
-'2x'.to_i?  #=> false
+"abc".to_i? #=> false
+"2x".to_i?  #=> false
 ```
 
 If an argument has leading zeros, they will be removed before checking.
 
 ```ruby
-'00000123'.to_i? #=> true
+"00000123".to_i? #=> true
 ```
 
 ### To Float
@@ -115,42 +115,42 @@ The `to_f?` method is to check convertibility to the Float class. This returns
 `true` only when an argument is convertible, therefore it is not required for the
 argument to be a floating point number. If you pass an integral number as an
 argument to this method, it will return `true` because it can be converted using
-the `to_f` Ruby built-in method (for example, `'2'.to_f` returns `2.0` ).
+the `to_f` Ruby built-in method (for example, `"2".to_f` returns `2.0` ).
 
 ```ruby
-'0.3'.to_f? #=> true
-'2'.to_f?   #=> true
-'.2'.to_f?  #=> true
+"0.3".to_f? #=> true
+"2".to_f?   #=> true
+".2".to_f?  #=> true
 
-'abc'.to_f?  #=> false
-'2.0x'.to_f? #=> false
+"abc".to_f?  #=> false
+"2.0x".to_f? #=> false
 ```
 
 
 ### To TrueClass / FalseClass
 The `to_bool?` method checks whether a string is convertible to TrueClass or
-FalseClass. This returns `true` or `false` only when the string is `'true'` or
-`'false'` .
+FalseClass. This returns `true` or `false` only when the string is `"true"` or
+`"false"` .
 
 ```ruby
-'true'.to_bool?  #=> true
-'false'.to_bool? #=> true
+"true".to_bool?  #=> true
+"false".to_bool? #=> true
 
-'abc'.to_bool?   #=> false
-'123'.to_bool?   #=> false
+"abc".to_bool?   #=> false
+"123".to_bool?   #=> false
 ```
 
 String Foundation also provides a check for a string's convertibility to a "Booly"
 (truthy or falsy). This returns `true` only when the string is a positive number,
-`'true'` , or an empty string. If not, it returns `false` .
+`"true"` , or an empty string. If not, it returns `false` .
 
 ```ruby
-'true'.to_booly? #=> true
-'123'.to_booly?  #=> true
-''.to_booly?     #=> true
-'-3'.to_booly?   #=> true
+"true".to_booly? #=> true
+"123".to_booly?  #=> true
+"".to_booly?     #=> true
+"-3".to_booly?   #=> true
 
-'abc'.to_booly?  #=> false
+"abc".to_booly?  #=> false
 ```
 
 
@@ -163,10 +163,10 @@ The `without_leading_zeros` method removes leading zeros (called "zero padding")
 This supports a floating point number and a string starting with a plus or minus sign.
 
 ```ruby
-'00001'.without_leading_zeros   #=> '1'
-'-0000.3'.without_leading_zeros #=> '-0.3'
+"00001".without_leading_zeros   #=> "1"
+"-0000.3".without_leading_zeros #=> "-0.3"
 
-%w(00001 00003 00008).map { |num| num.without_leading_zeros } #=> ['1', '3', '8']
+%w(00001 00003 00008).map { |num| num.without_leading_zeros } #=> ["1", "3", "8"]
 ```
 
 
@@ -178,53 +178,53 @@ or a proper class object. The Convert Methods make it easy to convert to these
 excluded classes.
 
 ### To TrueClass / FalseClass
-The `to_bool` method is for converting from a `'true'` or `'false'` string to `true`
+The `to_bool` method is for converting from a `"true"` or `"false"` string to `true`
 or `false` , otherwise it will raise a `TypeError` .
 
 ```ruby
-'true'.to_bool  #=> true
-'false'.to_bool #=> false
+"true".to_bool  #=> true
+"false".to_bool #=> false
 
-'1'.to_bool   #=> TypeError
-'0'.to_bool   #=> TypeError
-'-1'.to_bool  #=> TypeError
-'abc'.to_bool #=> TypeError
-''.to_bool    #=> TypeError
+"1".to_bool   #=> TypeError
+"0".to_bool   #=> TypeError
+"-1".to_bool  #=> TypeError
+"abc".to_bool #=> TypeError
+"".to_bool    #=> TypeError
 ```
 
 If you want to convert a Booly string, you can use the `to_booly` method. When a
-string is `'true'` or a positive number, this method will return `true` . Otherwise
+string is `"true"` or a positive number, this method will return `true` . Otherwise
 it will return `false` .
 
 ```ruby
-'true'.to_booly  #=> true
-'false'.to_booly #=> false
+"true".to_booly  #=> true
+"false".to_booly #=> false
 
-'1'.to_booly   #=> true
-'0'.to_booly   #=> false
-'-1'.to_booly  #=> false
-'abc'.to_booly #=> TypeError
-''.to_booly    #=> false
+"1".to_booly   #=> true
+"0".to_booly   #=> false
+"-1".to_booly  #=> false
+"abc".to_booly #=> TypeError
+"".to_booly    #=> false
 ```
 
 ### To Proper Class
 The `to_pretty` method is powerful. This method can convert to a proper class,
-for example, it will return a TrueClass `true` when a string is `'true'`, or returns
-an Integer `1` when a string is `'1'`.
+for example, it will return a TrueClass `true` when a string is `"true"`, or returns
+an Integer `1` when a string is `"1"`.
 Also this returns `nil` when a string is an empty string.
 
 ```ruby
-'1'.to_pretty      #=> 1
-'-3'.to_pretty     #=> -3
-'0004'.to_pretty   #=> 4
-'0.1'.to_pretty    #=> 0.1
-'-.5'.to_pretty    #=> -0.5
-'00.01'.to_pretty  #=> 0.01
+"1".to_pretty      #=> 1
+"-3".to_pretty     #=> -3
+"0004".to_pretty   #=> 4
+"0.1".to_pretty    #=> 0.1
+"-.5".to_pretty    #=> -0.5
+"00.01".to_pretty  #=> 0.01
 
-'true'.to_pretty  #=> true
-'false'.to_pretty #=> false
+"true".to_pretty  #=> true
+"false".to_pretty #=> false
 
-''.to_pretty #=> nil
+"".to_pretty #=> nil
 ```
 
 ### Newlines To Characters
@@ -232,8 +232,8 @@ The `nl_to` method converts a string with newlines to its specific characters.
 The `nl2` method is an alias for `nl_to` .
 
 ```ruby
-"Hi!\nWe are Brushdown.".nl_to(' / ') #=> 'Hi! / We are Brushdown.'
-"Hi!\nWe are Brushdown.".nl2(' / ')   #=> 'Hi! / We are Brushdown.'
+"Hi!\nWe are Brushdown.".nl_to(" / ") #=> "Hi! / We are Brushdown."
+"Hi!\nWe are Brushdown.".nl2(" / ")   #=> "Hi! / We are Brushdown."
 ```
 
 The `nl_to_br` method replaces the newlines in a string with HTML tag `<br>` for
@@ -241,14 +241,14 @@ break line.
 The `nl2br` method is an alias for `nl_to_br` .
 
 ```ruby
-"Hi!\nWe are Brushdown.".nl_to_br #=> 'Hi!<br>We are Brushdown.'
-"Hi!\nWe are Brushdown.".nl2br    #=> 'Hi!<br>We are Brushdown.'
+"Hi!\nWe are Brushdown.".nl_to_br #=> "Hi!<br>We are Brushdown."
+"Hi!\nWe are Brushdown.".nl2br    #=> "Hi!<br>We are Brushdown."
 ```
 
 
 ## The Like Methods
 The Like Methods provide to check whether a string is an integral number or a
-floating point number. These method ignore leading zeros, so the string `'000123'`
+floating point number. These method ignore leading zeros, so the string `"000123"`
 is regarded as an integral number. These method return `true` or `false` .
 
 The Like Methods check whether a string is an integral number or a floating point
@@ -259,26 +259,26 @@ as an integral number. These methods return `true` or `false` .
 The `like_i?` method checks whether a string is an integral number.
 
 ```ruby
-'123'.like_i? #=> true
-'00123'.like_i? #=> true
-'0.3'.like_i? #=> false
-'.2'.like_i?  #=> false
+"123".like_i? #=> true
+"00123".like_i? #=> true
+"0.3".like_i? #=> false
+".2".like_i?  #=> false
 
-'abc'.like_i? #=> false
-'2x'.like_i?  #=> false
+"abc".like_i? #=> false
+"2x".like_i?  #=> false
 ```
 
 ### Like Float
 The `like_f?` method checks whether a string is a floating point number.
 
 ```ruby
-'123'.like_f? #=> false
-'00123'.like_f? #=> false
-'0.3'.like_f? #=> true
-'.2'.like_f?  #=> true
+"123".like_f? #=> false
+"00123".like_f? #=> false
+"0.3".like_f? #=> true
+".2".like_f?  #=> true
 
-'abc'.like_f? #=> false
-'2x'.like_f?  #=> false
+"abc".like_f? #=> false
+"2x".like_f?  #=> false
 ```
 
 
@@ -300,8 +300,8 @@ The Case Methods convert to a case style, such as `lowerCamelCase` and
 | `to_udot`   | Upper Dot Case                | `We.Are.Brushdown` |
 
 ```ruby
-'user_id'.to_lcamel   #=> 'userId'
-'createdAt'.to_lsnake #=> 'created_at'
+"user_id".to_lcamel   #=> "userId"
+"createdAt".to_lsnake #=> "created_at"
 ```
 
 
