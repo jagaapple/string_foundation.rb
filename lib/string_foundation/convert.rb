@@ -2,9 +2,9 @@
 # LIB - STRING FOUNDATION - CONVERT
 # ==============================================================================
 # frozen_string_literal: true
-require_relative 'convertible'
-require_relative 'like'
-require_relative 'with'
+require_relative "convertible"
+require_relative "like"
+require_relative "with"
 class String
 
   # Convert to TrueClass or FalseClass.
@@ -13,7 +13,7 @@ class String
       raise TypeError.new("#{self} cannot be converted to TrueClass or FalseClass")
     end
 
-    (self == 'true')
+    (self == "true")
   end
 
   # Convert a booly string to TrueClass or FalseClass.
@@ -22,7 +22,7 @@ class String
       raise TypeError.new("#{self} cannot be converted to TrueClass or FalseClass")
     end
 
-    return true if self == 'true'  || (self.to_f? && self.to_f > 0)
+    return true if self == "true"  || (self.to_f? && self.to_f > 0)
     false
   end
 
@@ -37,13 +37,13 @@ class String
 
   # Convert from newline character to specific characters.
   def nl_to(char)
-    char = '' if char.nil?
+    char = "" if char.nil?
     self.gsub(/(\r\n|\n)/, char)
   end
 
   # Convert from newline character to a HTML tag "<br>".
   def nl_to_br
-    self.nl_to('<br>')
+    self.nl_to("<br>")
   end
 
   alias_method :nl2, :nl_to

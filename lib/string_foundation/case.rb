@@ -30,8 +30,8 @@ class String
     self.split_camel.map do |cw|
       cw.split(/\.|_|-|\s/).map do |w|
         w.capitalize
-      end.join('_')
-    end.join('_')
+      end.join("_")
+    end.join("_")
   end
 
   # Convert to lower-kebab-case.
@@ -45,8 +45,8 @@ class String
     self.split_camel.map do |cw|
       cw.split(/\.|_|-|\s/).map do |w|
         w.capitalize
-      end.join('-')
-    end.join('-')
+      end.join("-")
+    end.join("-")
   end
 
   # Convert to lower space case.
@@ -60,8 +60,8 @@ class String
     self.split_camel.map do |cw|
       cw.split(/\.|_|-|\s/).map do |w|
         w.capitalize
-      end.join(' ')
-    end.join(' ')
+      end.join(" ")
+    end.join(" ")
   end
 
   # Convert to lower.dot.case.
@@ -75,8 +75,8 @@ class String
     self.split_camel.map do |cw|
       cw.split(/\.|_|-|\s/).map do |w|
         w.capitalize
-      end.join('.')
-    end.join('.')
+      end.join(".")
+    end.join(".")
   end
 
 
