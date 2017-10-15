@@ -2,7 +2,7 @@
 # LIB - STRING FOUNDATION - LIKE
 # ==============================================================================
 # frozen_string_literal: true
-require_relative 'convertible'
+require_relative "convertible"
 class String
 
   # Check whether a string is an integral number.
@@ -10,7 +10,7 @@ class String
     return false unless self.to_i?
 
     num = self.without_leading_zeros
-    (num.to_i == num.to_i) && !num.include?('.')
+    (num.to_i == num.to_i) && !num.include?(".")
   end
 
   # Check whether a string is a floating point number.
@@ -18,7 +18,7 @@ class String
     return false unless self.to_f?
 
     num = self.without_leading_zeros
-    (num.to_i != num.to_f) || num.include?('.')
+    (num.to_i != num.to_f) || num.include?(".")
   end
 
 end
