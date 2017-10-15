@@ -2,7 +2,7 @@
 # LIB - STRING FOUNDATION - CONVERTIBLE
 # ==============================================================================
 # frozen_string_literal: true
-require_relative 'with'
+require_relative "with"
 class String
 
   # Whether or not to be possible to covert String to Integer.
