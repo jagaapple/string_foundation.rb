@@ -12,7 +12,7 @@ describe "[ Length Methods ]" do
     let(:expected_length) { 0 }
     subject { string.length?(expected_length) }
 
-    context "when a argument is String class," do
+    context "when an argument is String class," do
       let(:expected_length) { string.length.to_s }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
@@ -24,13 +24,13 @@ describe "[ Length Methods ]" do
       it { is_expected.to be true }
     end
 
-    context "when argument are less than characters length," do
+    context "when an argument is less than characters length," do
       let(:expected_length) { string.length - 1 }
 
       it { is_expected.to be false }
     end
 
-    context "when argument are greater than characters length," do
+    context "when an argument is greater than characters length," do
       let(:expected_length) { string.length + 1 }
 
       it { is_expected.to be false }
