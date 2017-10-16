@@ -82,7 +82,7 @@ The following is a sample of what String Foundation provides.
 "user_id".to_lcamel #=> "userId"
 ```
 
-<!--
+
 ## The Length Methods
 The Length methods enable you to check whether or not characters length is a
 specific length. These methods return `true` or `false` .
@@ -106,7 +106,6 @@ return `true` , unless return `false` .
 "abc".length?(2..5)  #=> true
 "abc".length?(8..32) #=> false
 ```
--->
 
 
 ## The Convertible Methods
