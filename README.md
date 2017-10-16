@@ -82,6 +82,32 @@ The following is a sample of what String Foundation provides.
 "user_id".to_lcamel #=> "userId"
 ```
 
+<!--
+## The Length Methods
+The Length methods enable you to check whether or not characters length is a
+specific length. These methods return `true` or `false` .
+
+### Equality
+The `length?` method checks whther characters length is equal to a specific
+length. If its case, return `true` , unless return `false` .
+This method accepts number of Integer (including Fixnum and Bignum classes).
+
+```ruby
+"abc".length?(3) #=> true
+"abc".length?(4) #=> false
+
+"abc".length?("3") #=> ArgumentError
+```
+
+Also this method accepts Range. In that case, characters length is within a range,
+return `true` , unless return `false` .
+
+```ruby
+"abc".length?(2..5)  #=> true
+"abc".length?(8..32) #=> false
+```
+-->
+
 
 ## The Convertible Methods
 The Convertible Methods enable you to check whether or not a string can be
