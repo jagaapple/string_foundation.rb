@@ -13,49 +13,55 @@ describe "[ Length Methods ]" do
     subject { string.length?(expected_length) }
 
     context "when a argument is String class," do
-      let(:expected_length) { "6" }
+      let(:expected_length) { string.length.to_s }
 
-      it { is_expected_as_block.to raise_error ArgumentError }
+      it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
     context "when characters length and argument are the same," do
-      let(:expected_length) { 6 }
+      let(:expected_length) { string.length }
 
       it { is_expected.to be true }
     end
 
-    context "when characters length and argument are not the same," do
-      let(:expected_length) { 5 }
+    context "when argument are less than characters length," do
+      let(:expected_length) { string.length - 1 }
 
       it { is_expected.to be false }
     end
 
-    context "when characters length are within range of argument `1..10`," do
-      let(:expected_length) { 1..10 }
-
-      it { is_expected.to be true }
-    end
-
-    context "when characters length are within range of argument `6..10`," do
-      let(:expected_length) { 6..10 }
-
-      it { is_expected.to be true }
-    end
-
-    context "when characters length are within range of argument `1..6`," do
-      let(:expected_length) { 1..6 }
-
-      it { is_expected.to be true }
-    end
-
-    context "when characters length are out of range of argument `1..5`," do
-      let(:expected_length) { 1..5 }
+    context "when argument are greater than characters length," do
+      let(:expected_length) { string.length + 1 }
 
       it { is_expected.to be false }
     end
 
-    context "when characters length are out of range of argument `7..10`," do
-      let(:expected_length) { 7..10 }
+    context "when characters length are middle of range of argument," do
+      let(:expected_length) { (string.length - 1)..(string.length + 1) }
+
+      it { is_expected.to be true }
+    end
+
+    context "when characters length are lower limit of range of argument," do
+      let(:expected_length) { string.length..(string.length + 1) }
+
+      it { is_expected.to be true }
+    end
+
+    context "when characters length are upper limit of range of argument," do
+      let(:expected_length) { (string.length - 1)..string.length }
+
+      it { is_expected.to be true }
+    end
+
+    context "when characters length is greater than range," do
+      let(:expected_length) { (string.length - 2)..(string.length - 1) }
+
+      it { is_expected.to be false }
+    end
+
+    context "when characters length is less than range," do
+      let(:expected_length) { (string.length + 1)..(string.length + 2) }
 
       it { is_expected.to be false }
     end
