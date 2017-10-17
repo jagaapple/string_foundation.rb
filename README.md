@@ -316,7 +316,7 @@ The Case Methods convert to a case style, such as `lowerCamelCase` and
 | `to_lcamel` | Lower Camel Case              | `weAreBrushdown`   |
 | `to_ucamel` | Upper Camel Case              | `WeAreBrushdown`   |
 | `to_lsnake` | Lower Snake Case              | `we_are_brushdown` |
-| `to_usnake` | Upper Snake Case ()           | `We_Are_Brushdown` |
+| `to_usnake` | Upper Snake Case              | `We_Are_Brushdown` |
 | `to_lkebab` | Lower Kebab Case (Chain Case) | `we-are-brushdown` |
 | `to_ukebab` | Upper Kebab Case (Train Case) | `We-Are-Brushdown` |
 | `to_lspace` | Lower Space Case (Lower Case) | `we are brushdown` |
