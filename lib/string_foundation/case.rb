@@ -87,17 +87,17 @@ class String
   # ----------------------------------------------------------------------------
   # Split string according to camel case.
   def split_camel
-    self.split /(?=[A-Z])/
+    self.split(/(?=[A-Z])/)
   end
 
   # Whether a character is uppder case or not.
   def is_upper?
-    /[[:upper:]]/.match(self) ? true : false
+    !!(self =~ /[[:upper:]]/)
   end
 
   # Whether a character is lower case or not.
   def is_lower?
-    /[[:lower:]]/.match(self) ? true : false
+    !!(self =~ /[[:lower:]]/)
   end
 
   # Make first character lower case.
