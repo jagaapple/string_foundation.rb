@@ -16,38 +16,41 @@ class String
 
   # Compare characters length is less than specified number.
   def length_lt?(length)
-    String.allow_only_integer_argument(length)
+    self.instance_eval { allow_only_integer(length) }
 
-    self.length < length
+    (self.length < length)
   end
 
   # Compare characters length is less than equal specified number.
   def length_lte?(length)
-    String.allow_only_integer_argument(length)
+    self.instance_eval { allow_only_integer(length) }
 
-    self.length <= length
+    (self.length <= length)
   end
 
   # Compare characters length is greater than specified number.
   def length_gt?(length)
-    String.allow_only_integer_argument(length)
+    self.instance_eval { allow_only_integer(length) }
 
-    self.length > length
+    (self.length > length)
   end
 
   # Compare characters length is greater than equal specified number.
   def length_gte?(length)
-    String.allow_only_integer_argument(length)
+    self.instance_eval { allow_only_integer(length) }
 
-    self.length >= length
+    (self.length >= length)
   end
 
+  # ----------------------------------------------------------------------------
+  # Private
+  # ----------------------------------------------------------------------------
   private
 
-  def self.allow_only_integer_argument(argument)
-    unless [Integer, Fixnum, Bignum].include?(argument.class)
-      raise ArgumentError.new("argument must be Integer (including Fixnum or Bignum)")
-    end
+  # Allow only Integer.
+  def allow_only_integer(argument)
+    return if [Integer, Fixnum, Bignum].include?(argument.class)
+    raise ArgumentError.new("argument must be Integer (including Fixnum or Bignum)")
   end
 
 end
