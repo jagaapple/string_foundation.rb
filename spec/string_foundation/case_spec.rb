@@ -826,7 +826,7 @@ describe "[ Case Methods ]" do
   # ----------------------------------------------------------------------------
   describe "SPLIT ACCORDING TO CAMEL CASE ::" do
     let(:string) { nil }
-    subject { string.split_camel }
+    subject { string.instance_eval { split_camel } }
 
     context "When string is Upper Camel Case," do
       let!(:string) { "ThisIsWord" }
@@ -846,49 +846,11 @@ describe "[ Case Methods ]" do
 
 
   # ----------------------------------------------------------------------------
-  # Check is_upper?
-  # ----------------------------------------------------------------------------
-  describe "CHECK is_upper? ::" do
-    let(:character) { nil }
-    subject { character.is_upper? }
-
-    context "when a character is upper case," do
-      let(:character) { "C" }
-      it { is_expected.to be true }
-    end
-
-    context "when a character is lower case," do
-      let(:character) { "c" }
-      it { is_expected.to be false }
-    end
-  end
-
-
-  # ----------------------------------------------------------------------------
-  # Check is_lower?
-  # ----------------------------------------------------------------------------
-  describe "CHECK is_lower? ::" do
-    let(:character) { nil }
-    subject { character.is_lower? }
-
-    context "when a character is lower case," do
-      let(:character) { "c" }
-      it { is_expected.to be true }
-    end
-
-    context "when a character is uppser case," do
-      let(:character) { "C" }
-      it { is_expected.to be false }
-    end
-  end
-
-
-  # ----------------------------------------------------------------------------
   # Make First Character Lower Case
   # ----------------------------------------------------------------------------
   describe "MAKE FIRST CHARACTER LOWER CASE ::" do
     let(:string) { nil }
-    subject { string.make_head_lower }
+    subject { string.instance_eval { make_head_lower } }
 
     context "When first character is Upper Case," do
       let(:string) { "ThisIsString" }
