@@ -13,12 +13,16 @@ jobs:
       - "checkout"
       - restore_cache:
           key: "v1-ruby-v2.1-dependencies-{{ checksum \"Gemfile.lock\" }}"
-      - run: "bundle install --jobs=4 --path=vendor/bundle"
+      - run:
+          name: "Install gems"
+          command: "bundle install --jobs=4 --path=vendor/bundle"
       - save_cache:
+          key: "v1-ruby-v2.1-dependencies-{{ checksum \"Gemfile.lock\" }}"
           paths:
             - "vendor/bundle"
-          key: "v1-ruby-v2.1-dependencies-{{ checksum \"Gemfile.lock\" }}"
-      - run: "bundle exec rspec"
+      - run:
+          name: "Exec tests"
+          command: "bundle exec rspec"
   ruby-v2.2:
     working_directory: "~/repo"
     docker:
@@ -27,12 +31,16 @@ jobs:
       - "checkout"
       - restore_cache:
           key: "v1-ruby-v2.2-dependencies-{{ checksum \"Gemfile.lock\" }}"
-      - run: "bundle install --jobs=4 --path=vendor/bundle"
+      - run:
+          name: "Install gems"
+          command: "bundle install --jobs=4 --path=vendor/bundle"
       - save_cache:
+          key: "v1-ruby-v2.2-dependencies-{{ checksum \"Gemfile.lock\" }}"
           paths:
             - "vendor/bundle"
-          key: "v1-ruby-v2.2-dependencies-{{ checksum \"Gemfile.lock\" }}"
-      - run: "bundle exec rspec"
+      - run:
+          name: "Exec tests"
+          command: "bundle exec rspec"
   ruby-v2.3:
     working_directory: "~/repo"
     docker:
@@ -41,12 +49,16 @@ jobs:
       - "checkout"
       - restore_cache:
           key: "v1-ruby-v2.3-dependencies-{{ checksum \"Gemfile.lock\" }}"
-      - run: "bundle install --jobs=4 --path=vendor/bundle"
+      - run:
+          name: "Install gems"
+          command: "bundle install --jobs=4 --path=vendor/bundle"
       - save_cache:
+          key: "v1-ruby-v2.3-dependencies-{{ checksum \"Gemfile.lock\" }}"
           paths:
             - "vendor/bundle"
-          key: "v1-ruby-v2.3-dependencies-{{ checksum \"Gemfile.lock\" }}"
-      - run: "bundle exec rspec"
+      - run:
+          name: "Exec tests"
+          command: "bundle exec rspec"
   ruby-v2.4:
     working_directory: "~/repo"
     docker:
@@ -55,16 +67,19 @@ jobs:
       - "checkout"
       - restore_cache:
           key: "v1-ruby-v2.4-dependencies-{{ checksum \"Gemfile.lock\" }}"
-      - run: "bundle install --jobs=4 --path=vendor/bundle"
+      - run:
+          name: "Install gems"
+          command: "bundle install --jobs=4 --path=vendor/bundle"
       - save_cache:
+          key: "v1-ruby-v2.4-dependencies-{{ checksum \"Gemfile.lock\" }}"
           paths:
             - "vendor/bundle"
-          key: "v1-ruby-v2.4-dependencies-{{ checksum \"Gemfile.lock\" }}"
-      - run: "bundle exec rspec"
+      - run:
+          name: "Exec tests"
+          command: "bundle exec rspec"
 workflows:
   version: 2
   build:
-    parallelism: 4
     jobs:
       - "ruby-v2.1"
       - "ruby-v2.2"
