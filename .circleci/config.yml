@@ -1,0 +1,87 @@
+# ==============================================================================
+# CIRCLE CI - CONFIG
+# ==============================================================================
+# Ruby CircleCI 2.0 configuration file.
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details.
+version: 2.0
+jobs:
+  ruby-v2.1:
+    working_directory: "~/repo"
+    docker:
+      - image: "circleci/ruby:2.1"
+    steps:
+      - "checkout"
+      - restore_cache:
+          key: "v1-ruby-v2.1-dependencies-{{ checksum \"Gemfile.lock\" }}"
+      - run:
+          name: "Install gems"
+          command: "bundle install --jobs=4 --path=vendor/bundle"
+      - save_cache:
+          key: "v1-ruby-v2.1-dependencies-{{ checksum \"Gemfile.lock\" }}"
+          paths:
+            - "vendor/bundle"
+      - run:
+          name: "Exec tests"
+          command: "bundle exec rspec"
+  ruby-v2.2:
+    working_directory: "~/repo"
+    docker:
+      - image: "circleci/ruby:2.2"
+    steps:
+      - "checkout"
+      - restore_cache:
+          key: "v1-ruby-v2.2-dependencies-{{ checksum \"Gemfile.lock\" }}"
+      - run:
+          name: "Install gems"
+          command: "bundle install --jobs=4 --path=vendor/bundle"
+      - save_cache:
+          key: "v1-ruby-v2.2-dependencies-{{ checksum \"Gemfile.lock\" }}"
+          paths:
+            - "vendor/bundle"
+      - run:
+          name: "Exec tests"
+          command: "bundle exec rspec"
+  ruby-v2.3:
+    working_directory: "~/repo"
+    docker:
+      - image: "circleci/ruby:2.3"
+    steps:
+      - "checkout"
+      - restore_cache:
+          key: "v1-ruby-v2.3-dependencies-{{ checksum \"Gemfile.lock\" }}"
+      - run:
+          name: "Install gems"
+          command: "bundle install --jobs=4 --path=vendor/bundle"
+      - save_cache:
+          key: "v1-ruby-v2.3-dependencies-{{ checksum \"Gemfile.lock\" }}"
+          paths:
+            - "vendor/bundle"
+      - run:
+          name: "Exec tests"
+          command: "bundle exec rspec"
+  ruby-v2.4:
+    working_directory: "~/repo"
+    docker:
+      - image: "circleci/ruby:2.4"
+    steps:
+      - "checkout"
+      - restore_cache:
+          key: "v1-ruby-v2.4-dependencies-{{ checksum \"Gemfile.lock\" }}"
+      - run:
+          name: "Install gems"
+          command: "bundle install --jobs=4 --path=vendor/bundle"
+      - save_cache:
+          key: "v1-ruby-v2.4-dependencies-{{ checksum \"Gemfile.lock\" }}"
+          paths:
+            - "vendor/bundle"
+      - run:
+          name: "Exec tests"
+          command: "bundle exec rspec"
+workflows:
+  version: 2
+  build:
+    jobs:
+      - "ruby-v2.1"
+      - "ruby-v2.2"
+      - "ruby-v2.3"
+      - "ruby-v2.4"
