@@ -23,6 +23,8 @@ string class.
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
+- [The Length Methods](#the-length-methods)
+  - [Equality](#equality)
 - [The Convertible Methods](#the-convertible-methods)
   - [To Integer](#to-integer)
   - [To Float](#to-float)
