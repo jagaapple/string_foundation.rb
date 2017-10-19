@@ -87,8 +87,8 @@ The following is a sample of what String Foundation provides.
 The Length methods enable you to check whether or not characters length is a
 specific length. These methods return `true` or `false` .
 
-### Equality
-The `length?` method checks whther characters length is equal to a specific
+### Equal To
+The `length?` method checks whether characters length is equal to a specific
 length. If its case, return `true` , unless return `false` .
 This method accepts number of Integer (including Fixnum and Bignum classes).
 
@@ -105,6 +105,50 @@ return `true` , unless return `false` .
 ```ruby
 "abc".length?(2..5)  #=> true
 "abc".length?(8..32) #=> false
+```
+
+### Less Than
+The `length_lt?` method checks whether characters length is less than a specific
+length. If its case, return `true` , unless return `false` .
+This method accepts only number of Integer (including Fixnum and Bignum classes).
+
+```ruby
+"abc".length_lt?(2) #=> false
+"abc".length_lt?(3) #=> false
+"abc".length_lt?(4) #=> true
+```
+
+### Less Than Or Equal To
+The `length_lte?` method checks whether characters length is less than or equal
+to a specific length. If its case, return `true` , unless return `false` .
+This method accepts only number of Integer (including Fixnum and Bignum classes).
+
+```ruby
+"abc".length_lte?(2) #=> false
+"abc".length_lte?(3) #=> true
+"abc".length_lte?(4) #=> true
+```
+
+### Greater Than
+The `length_gt?` method checks whether characters length is greater than a specific
+length. If its case, return `true` , unless return `false` .
+This method accepts only number of Integer (including Fixnum and Bignum classes).
+
+```ruby
+"abc".length_gt?(2) #=> true
+"abc".length_gt?(3) #=> false
+"abc".length_gt?(4) #=> false
+```
+
+### Greater Than Or Equal To
+The `length_gte?` method checks whether characters length is greater than or equal
+to a specific length. If its case, return `true` , unless return `false` .
+This method accepts only number of Integer (including Fixnum and Bignum classes).
+
+```ruby
+"abc".length_gte?(2) #=> true
+"abc".length_gte?(3) #=> true
+"abc".length_gte?(4) #=> false
 ```
 
 
