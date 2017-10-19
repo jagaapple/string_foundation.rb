@@ -7,211 +7,219 @@ describe "[ Length Methods ]" do
   let(:expected_length) { 0 }
 
   # ----------------------------------------------------------------------------
-  # Compare Characters Length
+  # Check Whether Characters Length Is A Specific Number
   # ----------------------------------------------------------------------------
-  describe "COMPARE CHARACTERS LENGTH" do
+  describe "CHECK WHETHER CHARACTERS LENGTH IS A SPECIFIC NUMBER ::" do
     subject { string.length?(expected_length) }
 
-    context "when an argument is String class," do
+    context "when an argument is String," do
       let(:expected_length) { string.length.to_s }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
-    context "when characters length and argument are the same," do
-      let(:expected_length) { string.length }
+    context "when an argument is Integer," do
+      context "characters length is equal to an argument," do
+        let(:expected_length) { string.length }
 
-      it { is_expected.to be true }
+        it { is_expected.to be true }
+      end
+
+      context "characters length is less than an argument," do
+        let(:expected_length) { string.length + 1 }
+
+        it { is_expected.to be false }
+      end
+
+      context "characters length is greater than an argument," do
+        let(:expected_length) { string.length - 1 }
+
+        it { is_expected.to be false }
+      end
     end
 
-    context "when an argument is less than characters length," do
-      let(:expected_length) { string.length - 1 }
+    context "when an argument is Range," do
+      context "characters length is in range," do
+        let(:expected_length) { (string.length - 1)..(string.length + 1) }
 
-      it { is_expected.to be false }
-    end
+        it { is_expected.to be true }
+      end
 
-    context "when an argument is greater than characters length," do
-      let(:expected_length) { string.length + 1 }
+      context "characters length is equal to the minimum of range," do
+        let(:expected_length) { string.length..(string.length + 1) }
 
-      it { is_expected.to be false }
-    end
+        it { is_expected.to be true }
+      end
 
-    context "when characters length are middle of range of argument," do
-      let(:expected_length) { (string.length - 1)..(string.length + 1) }
+      context "characters length is equal to the maximum of range," do
+        let(:expected_length) { (string.length - 1)..string.length }
 
-      it { is_expected.to be true }
-    end
+        it { is_expected.to be true }
+      end
 
-    context "when characters length are lower limit of range of argument," do
-      let(:expected_length) { string.length..(string.length + 1) }
+      context "characters length is less than the minimum of range," do
+        let(:expected_length) { (string.length + 1)..(string.length + 2) }
 
-      it { is_expected.to be true }
-    end
+        it { is_expected.to be false }
+      end
 
-    context "when characters length are upper limit of range of argument," do
-      let(:expected_length) { (string.length - 1)..string.length }
+      context "characters length is greater than the maximum of range," do
+        let(:expected_length) { (string.length - 2)..(string.length - 1) }
 
-      it { is_expected.to be true }
-    end
-
-    context "when characters length is greater than range," do
-      let(:expected_length) { (string.length - 2)..(string.length - 1) }
-
-      it { is_expected.to be false }
-    end
-
-    context "when characters length is less than range," do
-      let(:expected_length) { (string.length + 1)..(string.length + 2) }
-
-      it { is_expected.to be false }
+        it { is_expected.to be false }
+      end
     end
   end
 
+
   # ----------------------------------------------------------------------------
-  # Compare Characters Length is Less Than Specified Number
+  # Check Whether Characters Length Is Less Than A Specific Number
   # ----------------------------------------------------------------------------
-  describe "COMPARE CHARACTERS LENGTH IS LESS THAN SPECIFIED NUMBER" do
+  describe "CHECK WHETHER CHARACTERS LENGTH IS LESS THAN A SPECIFIC NUMBER ::" do
     subject { string.length_lt?(expected_length) }
 
-    context "when an argument is String class," do
+    context "when an argument is String," do
       let(:expected_length) { string.length.to_s }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
-    context "when an argument is Range class," do
+    context "when an argument is Range," do
       let(:expected_length) { (string.length - 1)..(string.length + 1) }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
-    context "when argument is greater than character length," do
+    context "when characters length is less than an argument," do
       let(:expected_length) { string.length + 1 }
 
       it { is_expected.to be true }
     end
 
-    context "when argument is less than character length," do
-      let(:expected_length) { string.length - 1 }
+    context "when characters length is equal to an argument," do
+      let(:expected_length) { string.length }
 
       it { is_expected.to be false }
     end
 
-    context "when argument and character length is same," do
-      let(:expected_length) { string.length }
+    context "when characters length is greater than an argument," do
+      let(:expected_length) { string.length - 1 }
 
       it { is_expected.to be false }
     end
   end
 
+
   # ----------------------------------------------------------------------------
-  # Compare Characters Length is Less Than Equal Specified Number
+  # Check Whether Characters Length Is Less Than Or Equal To A Specific Number
   # ----------------------------------------------------------------------------
-  describe "COMPARE CHARACTERS LENGTH IS LESS THAN EQUAL SPECIFIED NUMBER" do
+  describe "CHECK WHETHER CHARACTERS LENGTH IS LESS THAN OR EQUAL TO A SPECIFIC NUMBER ::" do
     subject { string.length_lte?(expected_length) }
 
-    context "when an argument is String class," do
+    context "when an argument is String," do
       let(:expected_length) { string.length.to_s }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
-    context "when an argument is Range class," do
+    context "when an argument is Range," do
       let(:expected_length) { (string.length - 1)..(string.length + 1) }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
-    context "when argument is greater than character length," do
+    context "when characters length is equal to an argument," do
+      let(:expected_length) { string.length }
+
+      it { is_expected.to be true }
+    end
+
+    context "when characters length is less than an argument," do
       let(:expected_length) { string.length + 1 }
 
       it { is_expected.to be true }
     end
 
-    context "when argument is less than character length," do
+    context "when characters length is greater than an argument," do
       let(:expected_length) { string.length - 1 }
 
       it { is_expected.to be false }
     end
-
-    context "when argument and character length is same," do
-      let(:expected_length) { string.length }
-
-      it { is_expected.to be true }
-    end
   end
 
+
   # ----------------------------------------------------------------------------
-  # Compare Characters Length is Greater Than Specified Number
+  # Check Whether Characters Length Is Greater Than A Specific Number
   # ----------------------------------------------------------------------------
-  describe "COMPARE CHARACTERS LENGTH IS GREATER THAN SPECIFIED NUMBER" do
+  describe "CHECK WHETHER CHARACTERS LENGTH IS GREATER THAN A SPECIFIC NUMBER ::" do
     subject { string.length_gt?(expected_length) }
 
-    context "when an argument is String class," do
+    context "when an argument is String," do
       let(:expected_length) { string.length.to_s }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
-    context "when an argument is Range class," do
+    context "when an argument is Range," do
       let(:expected_length) { (string.length - 1)..(string.length + 1) }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
-    context "when argument is less than character length," do
+    context "when characters length is greater than an argument," do
       let(:expected_length) { string.length - 1 }
 
       it { is_expected.to be true }
     end
 
-    context "when argument is greater than character length," do
-      let(:expected_length) { string.length + 1 }
+    context "when characters length is equal to an argument," do
+      let(:expected_length) { string.length }
 
       it { is_expected.to be false }
     end
 
-    context "when argument and character length is same," do
-      let(:expected_length) { string.length }
+    context "when characters length is less than an argument," do
+      let(:expected_length) { string.length + 1 }
 
       it { is_expected.to be false }
     end
   end
 
+
   # ----------------------------------------------------------------------------
-  # Compare Characters Length is Greater Than Equal Specified Number
+  # Check Whether Characters Length Is Greater Than Or Equal To A Specific Number
   # ----------------------------------------------------------------------------
-  describe "COMPARE CHARACTERS LENGTH IS GREATER THAN EQUAL SPECIFIED NUMBER" do
+  describe "CHECK WHETHER CHARACTERS LENGTH IS GREATER THAN OR EQUAL TO A SPECIFIC NUMBER ::" do
     subject { string.length_gte?(expected_length) }
 
-    context "when an argument is String class," do
+    context "when an argument is String," do
       let(:expected_length) { string.length.to_s }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
-    context "when an argument is Range class," do
+    context "when an argument is Range," do
       let(:expected_length) { (string.length - 1)..(string.length + 1) }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end
 
-    context "when argument is less than character length," do
+    context "when characters length is equal to an argument," do
+      let(:expected_length) { string.length }
+
+      it { is_expected.to be true }
+    end
+
+    context "when characters length is greater than an argument," do
       let(:expected_length) { string.length - 1 }
 
       it { is_expected.to be true }
     end
 
-    context "when argument is greater than character length," do
+    context "when characters length is less than an argument," do
       let(:expected_length) { string.length + 1 }
 
       it { is_expected.to be false }
-    end
-
-    context "when argument and character length is same," do
-      let(:expected_length) { string.length }
-
-      it { is_expected.to be true }
     end
   end
 
