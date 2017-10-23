@@ -24,7 +24,14 @@ string class.
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
 - [The Length Methods](#the-length-methods)
-  - [Equality](#equality)
+  - [Equal To](#equal-to)
+  - [Less Than](#less-than)
+  - [Less Than Or Equal To](#less-than-or-equal-to)
+  - [Greater Than](#greater-than)
+  - [Greater Than Or Equal To](#greater-than-or-equal-to)
+- [The Blank Methods](#the-blank-methods)
+  - [Check To Blank](#check-to-blank)
+  - [Check To Present](#check-to-present)
 - [The Convertible Methods](#the-convertible-methods)
   - [To Integer](#to-integer)
   - [To Float](#to-float)
@@ -151,6 +158,39 @@ This method accepts only number of Integer (including Fixnum and Bignum classes)
 "abc".length_gte?(2) #=> true
 "abc".length_gte?(3) #=> true
 "abc".length_gte?(4) #=> false
+```
+
+
+## The Blank Methods
+The Blank Methods enable you to check whether or not a string is an empty. These
+methods return `true` or `false` .
+
+### Check To Blank
+The `blank?` method checks whether a string is blank (it is an empty string or
+includes only half-width spaces or newlines). If a string is blank, return `true` ,
+unless return `false` .
+
+```ruby
+"".blank?     #=> true
+" ".blank?    #=> true
+"   ".blank?  #=> true
+" \n ".blank? #=> true
+
+"abc".blank? #=> false
+```
+
+### Check To Present
+The `present?` method checks whether a string is present (it is not an empty string
+or does not include only half-width spaces or newlines). If a string is present,
+return `true` , unless return `false` .
+
+```ruby
+"".present?     #=> false
+" ".present?    #=> false
+"   ".present?  #=> false
+" \n ".present? #=> false
+
+"abc".present? #=> true
 ```
 
 
