@@ -6,81 +6,82 @@ describe "[ Blank Methods ]" do
   let(:string) { "" }
 
   # ----------------------------------------------------------------------------
-  # Check Whether Characters Is A Blank
+  # Check Whether A String Is A Blank
   # ----------------------------------------------------------------------------
-  describe "CHECK WHETHER CHARACTERS IS A BLANK ::" do
-    subject { string.blank?() }
+  describe "CHECK WHETHER A STRING IS A BLANK ::" do
+    subject { string.blank? }
 
-    context "when object is empty," do
+    context "when a string is an empty," do
       it { is_expected.to be true }
     end
 
-    context "when object is word," do
+    context "when a string is a word," do
       let(:string) { "string" }
 
       it { is_expected.to be false }
     end
 
-    context "when object is sentence included half-width spaces," do
+    context "when a string includes half-width spaces," do
       let(:string) { "this is string foundation." }
 
       it { is_expected.to be false }
     end
 
-    context "when object is single half-width space," do
+    context "when a string includes only 1 half-width space," do
       let(:string) { " " }
 
       it { is_expected.to be true }
     end
 
-    context "when object is multiple half-width spaces," do
-      let(:string) { " " * 2 }
+    context "when a string includes only multiple half-width spaces," do
+      let(:string) { " " * 3 }
 
       it { is_expected.to be true }
     end
 
-    context "when object is newline," do
+    context "when a string is a newline," do
       let(:string) { "\n" }
 
       it { is_expected.to be true }
     end
   end
 
-  # ----------------------------------------------------------------------------
-  # Check Whether Characters Is Not A Blank
-  # ----------------------------------------------------------------------------
-  describe "CHECK WHETHER CHARACTERS IS NOT A BLANK ::" do
-    subject { string.present?() }
 
-    context "when object is empty," do
+  # ----------------------------------------------------------------------------
+  # Check Whether A String Is Present
+  # ----------------------------------------------------------------------------
+  describe "CHECK WHETHER A STRING IS PRESENT ::" do
+    subject { string.present? }
+
+    context "when a string is an empty," do
       it { is_expected.to be false }
     end
 
-    context "when object is word," do
+    context "when a string is a word," do
       let(:string) { "string" }
 
       it { is_expected.to be true }
     end
 
-    context "when object is sentence included half-width spaces," do
+    context "when a string includes half-width spaces," do
       let(:string) { "this is string foundation." }
 
       it { is_expected.to be true }
     end
 
-    context "when object is single half-width space," do
+    context "when a string includes only 1 half-width space," do
       let(:string) { " " }
 
       it { is_expected.to be false }
     end
 
-    context "when object is multiple half-width spaces," do
-      let(:string) { " " * 2 }
+    context "when a string includes only multiple half-width spaces," do
+      let(:string) { " " * 3 }
 
       it { is_expected.to be false }
     end
 
-    context "when object is newline," do
+    context "when a string is a newline," do
       let(:string) { "\n" }
 
       it { is_expected.to be false }
