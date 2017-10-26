@@ -23,8 +23,17 @@ string class.
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Basic Usage](#basic-usage)
+- [The Blank Methods](#the-blank-methods)
+  - [Check To Blank](#check-to-blank)
+  - [Check To Present](#check-to-present)
+- [The Is Methods](#the-is-methods)
+  - [Is Symbol](#is-symbol)
 - [The Length Methods](#the-length-methods)
-  - [Equality](#equality)
+  - [Equal To](#equal-to)
+  - [Less Than](#less-than)
+  - [Less Than Or Equal To](#less-than-or-equal-to)
+  - [Greater Than](#greater-than)
+  - [Greater Than Or Equal To](#greater-than-or-equal-to)
 - [The Convertible Methods](#the-convertible-methods)
   - [To Integer](#to-integer)
   - [To Float](#to-float)
@@ -69,6 +78,15 @@ And then run `bundle install` .
 The following is a sample of what String Foundation provides.
 
 ```ruby
+# Check characters length.
+"abc".length?(3)          #=> true
+"password".length?(8..32) #=> true
+"password".gte?(8)        #=> true
+"password".lte?(32)       #=> true
+
+# Compare a symbol.
+"abc".is_sym?(:abc) #=> true
+
 # Check for convertible.
 "123".to_i?  #=> true
 "x123".to_i? #=> false
@@ -82,6 +100,57 @@ The following is a sample of what String Foundation provides.
 
 # Convert to lowerCamelCase.
 "user_id".to_lcamel #=> "userId"
+```
+
+
+## The Blank Methods
+The Blank Methods enable you to check whether or not a string is an empty. These
+methods return `true` or `false` .
+
+### Check To Blank
+The `blank?` method checks whether a string is blank (it is an empty string or
+includes only half-width spaces or newlines). If a string is blank, return `true` ,
+unless return `false` .
+
+```ruby
+"".blank?     #=> true
+" ".blank?    #=> true
+"   ".blank?  #=> true
+" \n ".blank? #=> true
+
+"abc".blank? #=> false
+```
+
+### Check To Present
+The `present?` method checks whether a string is present (it is not an empty string
+or does not include only half-width spaces or newlines). If a string is present,
+return `true` , unless return `false` .
+
+```ruby
+"".present?     #=> false
+" ".present?    #=> false
+"   ".present?  #=> false
+" \n ".present? #=> false
+
+"abc".present? #=> true
+```
+
+
+## The Is Methods
+The Is Methods enable you to check whether or not a string is nearly equal to
+a specific value. These methods return `true` or `false` .
+
+### Is Symbol
+The `is_sym?` method checks whether a string is nearly equal to a specific Symbol.
+This returns `true` only if it is, unless return `false` . This method accepts
+only Symbol.
+
+```ruby
+"abc".is_sym?(:abc) #=> true
+"".is_sym?(:"")     #=> true
+"abc".is_sym?(:def) #=> false
+
+"abc".is_sym?("abc") #=> ArgumentError
 ```
 
 
@@ -196,7 +265,6 @@ the `to_f` Ruby built-in method (for example, `"2".to_f` returns `2.0` ).
 "abc".to_f?  #=> false
 "2.0x".to_f? #=> false
 ```
-
 
 ### To TrueClass / FalseClass
 The `to_bool?` method checks whether a string is convertible to TrueClass or
