@@ -19,18 +19,18 @@ describe "[ Is Methods ]" do
     end
 
     context "when an object equal to an argument," do
-      context "object and argument is only alphabets," do
+      context "object and argument are alphabets," do
         it { is_expected.to be true }
       end
 
-      context "object and argument is only numbers," do
+      context "object and argument are numbers," do
         let(:string) { "123" }
         let(:expected_symbol) { :"123" }
 
         it { is_expected.to be true }
       end
 
-      context "object and argument is empty," do
+      context "object and argument are empty," do
         let(:string) { "" }
         let(:expected_symbol) { :"" }
 
