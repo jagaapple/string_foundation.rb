@@ -1,8 +1,8 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - SYMBOL
+# SPEC - STRING FOUNDATION - IS
 # ==============================================================================
 # frozen_string_literal: true
-describe "[ Symbol Methods ]" do
+describe "[ Is Methods ]" do
   let(:string) { "string" }
   let(:expected_symbol) { :string }
 
@@ -23,14 +23,28 @@ describe "[ Symbol Methods ]" do
         it { is_expected.to be true }
       end
 
-      context "object and argument is includes underscores," do
+      context "object and argument is only numbers," do
+        let(:string) { "123" }
+        let(:expected_symbol) { :"123" }
+
+        it { is_expected.to be true }
+      end
+
+      context "object and argument is empty," do
+        let(:string) { "" }
+        let(:expected_symbol) { :"" }
+
+        it { is_expected.to be true }
+      end
+
+      context "object and argument include underscores," do
         let(:string) { "string_foundation" }
         let(:expected_symbol) { :string_foundation }
 
         it { is_expected.to be true }
       end
 
-      context "object and argument is includes dashes," do
+      context "object and argument include dashes," do
         let(:string) { "string-foundation" }
         let(:expected_symbol) { :"string-foundation" }
 
@@ -38,7 +52,7 @@ describe "[ Symbol Methods ]" do
       end
     end
 
-    context "when an object not equal to an argument," do
+    context "when an object is not equal to an argument," do
       let(:expected_symbol) { :integer }
 
       it { is_expected.to be false }
