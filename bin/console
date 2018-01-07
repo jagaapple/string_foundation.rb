@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 # ==============================================================================
 # BIN - CONSOLE
+# frozen_string_literal: true
 # ==============================================================================
 require "bundler/setup"
 require "string_foundation"

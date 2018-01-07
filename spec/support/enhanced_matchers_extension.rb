@@ -1,5 +1,6 @@
 # ==============================================================================
 # SPEC - SUPPORT - ENHANCED MATCHERS EXTENSION
+# frozen_string_literal: true
 # ==============================================================================
 module EnhancedMatchersExtension
 
