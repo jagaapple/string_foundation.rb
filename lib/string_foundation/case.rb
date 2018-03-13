@@ -13,10 +13,9 @@ class String
   # Convert to UpperCamelCase.
   def to_ucamel
     split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join
-    end.join
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join
+    end
+    .join
   end
 
   # Convert to lower_snake_case.
@@ -28,10 +27,9 @@ class String
   # Convert to Upper_Snake_Case.
   def to_usnake
     split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join("_")
-    end.join("_")
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join("_")
+    end
+    .join("_")
   end
 
   # Convert to lower-kebab-case.
@@ -43,10 +41,9 @@ class String
   # Convert to Upper-Kebab-Case.
   def to_ukebab
     split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join("-")
-    end.join("-")
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join("-")
+    end
+    .join("-")
   end
 
   # Convert to lower space case.
@@ -58,10 +55,9 @@ class String
   # Convert to Upper Space Case.
   def to_uspace
     split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join(" ")
-    end.join(" ")
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join(" ")
+    end
+    .join(" ")
   end
 
   # Convert to lower.dot.case.
@@ -73,10 +69,9 @@ class String
   # Convert to Upper.Dot.Case.
   def to_udot
     split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join(".")
-    end.join(".")
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join(".")
+    end
+    .join(".")
   end
 
 
