@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - VERSION
+# SPEC - STRING FOUNDATION - WITH SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ With Methods ]" do
