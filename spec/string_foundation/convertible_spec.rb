@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - CONVERTIBLE
+# SPEC - STRING FOUNDATION - CONVERTIBLE SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ Convertible Methods ]" do

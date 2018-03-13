@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - IS
+# SPEC - STRING FOUNDATION - IS SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ Is Methods ]" do

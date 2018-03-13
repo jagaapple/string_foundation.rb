@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - LENGTH
+# SPEC - STRING FOUNDATION - LENGTH SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ Length Methods ]" do

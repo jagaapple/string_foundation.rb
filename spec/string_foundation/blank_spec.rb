@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - BLANK
+# SPEC - STRING FOUNDATION - BLANK SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ Blank Methods ]" do
