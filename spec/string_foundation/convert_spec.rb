@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - CONVERT
+# SPEC - STRING FOUNDATION - CONVERT SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ Convert Methods ]" do
@@ -188,7 +188,7 @@ describe "[ Convert Methods ]" do
     end
 
     context "when an argument is not set," do
-      subject { string.nl_to() }
+      subject { string.nl_to }
 
       it { is_expected_as_block.to raise_error(ArgumentError) }
     end

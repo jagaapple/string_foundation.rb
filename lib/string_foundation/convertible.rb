@@ -23,7 +23,7 @@ class String
 
   # Whether or not to be possible to covert String to Boolean.
   def to_bool?
-    return true if %w(true false).include?(self)
+    return true if ["true", "false"].include?(self)
     false
   end
 
@@ -31,7 +31,7 @@ class String
   # like boolean types.
   def to_booly?
     return true if self.length == 0
-    return true if %w(true false).include?(self)
+    return true if ["true", "false"].include?(self)
     return true if self.to_f?
 
     false

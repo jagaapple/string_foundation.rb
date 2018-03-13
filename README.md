@@ -104,7 +104,7 @@ The following is a sample of what String Foundation provides.
 
 
 ## The Blank Methods
-The Blank Methods enable you to check whether or not a string is an empty. These
+The Blank Methods enable you to check whether or not a string is empty. These
 methods return `true` or `false` .
 
 ### Check To Blank
@@ -305,7 +305,7 @@ This supports a floating point number and a string starting with a plus or minus
 "00001".without_leading_zeros   #=> "1"
 "-0000.3".without_leading_zeros #=> "-0.3"
 
-%w(00001 00003 00008).map { |num| num.without_leading_zeros } #=> ["1", "3", "8"]
+["00001", "00003", "00008"].map { |num| num.without_leading_zeros } #=> ["1", "3", "8"]
 ```
 
 

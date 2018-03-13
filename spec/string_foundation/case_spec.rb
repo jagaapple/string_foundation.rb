@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - CASE
+# SPEC - STRING FOUNDATION - CASE SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ Case Methods ]" do

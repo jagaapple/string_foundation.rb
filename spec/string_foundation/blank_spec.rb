@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - BLANK
+# SPEC - STRING FOUNDATION - BLANK SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ Blank Methods ]" do
@@ -11,7 +11,7 @@ describe "[ Blank Methods ]" do
   describe "CHECK WHETHER A STRING IS A BLANK ::" do
     subject { string.blank? }
 
-    context "when a string is an empty," do
+    context "when a string is empty," do
       it { is_expected.to be true }
     end
 
@@ -53,7 +53,7 @@ describe "[ Blank Methods ]" do
   describe "CHECK WHETHER A STRING IS PRESENT ::" do
     subject { string.present? }
 
-    context "when a string is an empty," do
+    context "when a string is empty," do
       it { is_expected.to be false }
     end
 
