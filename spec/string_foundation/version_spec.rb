@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - VERSION
+# SPEC - STRING FOUNDATION - VERSION SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe StringFoundation::VERSION do

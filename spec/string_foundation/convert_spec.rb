@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - CONVERT
+# SPEC - STRING FOUNDATION - CONVERT SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ Convert Methods ]" do

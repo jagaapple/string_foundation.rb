@@ -1,5 +1,5 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - LIKE
+# SPEC - STRING FOUNDATION - LIKE SPEC
 # frozen_string_literal: true
 # ==============================================================================
 describe "[ Like Methods ]" do
