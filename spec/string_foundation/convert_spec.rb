@@ -167,22 +167,22 @@ describe "[ Convert Methods ]" do
   # Convert From Newline To Characters
   # ----------------------------------------------------------------------------
   describe "CONVERT FROM NEWLINE TO CHARACTERS" do
-    let(:string) { "We are Brushdown.\nWe are Brushdown." }
+    let(:string) { "I am Jaga Apple.\nI am Jaga Apple." }
     let(:char) { "<br>" }
     subject { string.nl_to(char) }
 
     context "when a string has newlines \"\\n\"," do
-      it { is_expected.to eq("We are Brushdown.<br>We are Brushdown.") }
+      it { is_expected.to eq("I am Jaga Apple.<br>I am Jaga Apple.") }
     end
 
     context "when a string has newlines \"\\r\\n\"," do
-      let(:string) { "We are Brushdown.\r\nWe are Brushdown." }
+      let(:string) { "I am Jaga Apple.\r\nI am Jaga Apple." }
 
-      it { is_expected.to eq("We are Brushdown.<br>We are Brushdown.") }
+      it { is_expected.to eq("I am Jaga Apple.<br>I am Jaga Apple.") }
     end
 
     context "when a string does not have newlines," do
-      let(:string) { "We are Brushdown. We are Brushdown." }
+      let(:string) { "I am Jaga Apple. I am Jaga Apple." }
 
       it { is_expected.to eq(string) }
     end
@@ -196,13 +196,13 @@ describe "[ Convert Methods ]" do
     context "when an argument is nil," do
       let(:char) { nil }
 
-      it { is_expected.to eq("We are Brushdown.We are Brushdown.") }
+      it { is_expected.to eq("I am Jaga Apple.I am Jaga Apple.") }
     end
 
     context "when an argument is an empty string," do
       let(:char) { "" }
 
-      it { is_expected.to eq("We are Brushdown.We are Brushdown.") }
+      it { is_expected.to eq("I am Jaga Apple.I am Jaga Apple.") }
     end
   end
 
@@ -211,21 +211,21 @@ describe "[ Convert Methods ]" do
   # Convert From Newline To <br>
   # ----------------------------------------------------------------------------
   describe "CONVERT FROM NEWLINE TO `<br>`" do
-    let(:string) { "We are Brushdown.\nWe are Brushdown." }
+    let(:string) { "I am Jaga Apple.\nI am Jaga Apple." }
     subject { string.nl_to_br }
 
     context "when a string has newlines \"\n\"," do
-      it { is_expected.to eq("We are Brushdown.<br>We are Brushdown.") }
+      it { is_expected.to eq("I am Jaga Apple.<br>I am Jaga Apple.") }
     end
 
     context "when a string has newlines \"\\r\\n\"," do
-      let(:string) { "We are Brushdown.\r\nWe are Brushdown." }
+      let(:string) { "I am Jaga Apple.\r\nI am Jaga Apple." }
 
-      it { is_expected.to eq("We are Brushdown.<br>We are Brushdown.") }
+      it { is_expected.to eq("I am Jaga Apple.<br>I am Jaga Apple.") }
     end
 
     context "when a string does not have newlines," do
-      let(:string) { "We are Brushdown. We are Brushdown." }
+      let(:string) { "I am Jaga Apple. I am Jaga Apple." }
 
       it { is_expected.to eq(string) }
     end
