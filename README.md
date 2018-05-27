@@ -5,10 +5,10 @@
 
 ---
 
-[![CircleCI](https://img.shields.io/circleci/project/github/brushdown/string_foundation.rb/master.svg)](https://circleci.com/gh/brushdown/string_foundation.rb)
-[![codecov](https://img.shields.io/codecov/c/github/brushdown/string_foundation.rb/master.svg)](https://codecov.io/gh/brushdown/string_foundation.rb)
+[![CircleCI](https://img.shields.io/circleci/project/github/jagaapple/string_foundation.rb/master.svg)](https://circleci.com/gh/jagaapple/string_foundation.rb)
+[![codecov](https://img.shields.io/codecov/c/github/jagaapple/string_foundation.rb/master.svg)](https://codecov.io/gh/jagaapple/string_foundation.rb)
 [![Gem](https://img.shields.io/gem/v/string_foundation.svg)](https://rubygems.org/gems/string_foundation/)
-[![license](https://img.shields.io/github/license/brushdown/string_foundation.rb.svg)](https://opensource.org/licenses/MIT)
+[![license](https://img.shields.io/github/license/jagaapple/string_foundation.rb.svg)](https://opensource.org/licenses/MIT)
 [![@jagaapple](https://img.shields.io/badge/contact-%40jagaapple-blue.svg)](https://twitter.com/jagaapple)
 
 String Foundation is a Ruby library that provides useful methods for the Ruby
@@ -17,8 +17,9 @@ string class.
 
 ## Table of Contents
 
-<!-- MarkdownTOC autolink="true" bracket="round" -->
+<!-- TOC depthFrom:2 -->
 
+- [Table of Contents](#table-of-contents)
 - [Quick Start](#quick-start)
   - [Requirements](#requirements)
   - [Installation](#installation)
@@ -39,7 +40,7 @@ string class.
   - [To Float](#to-float)
   - [To TrueClass / FalseClass](#to-trueclass--falseclass)
 - [The With Methods](#the-with-methods)
-  - [Remove Leading Zeros \(Zero Padding\)](#remove-leading-zeros-zero-padding)
+  - [Remove Leading Zeros (Zero Padding)](#remove-leading-zeros-zero-padding)
 - [The Convert Methods](#the-convert-methods)
   - [To TrueClass / FalseClass](#to-trueclass--falseclass-1)
   - [To Proper Class](#to-proper-class)
@@ -51,7 +52,7 @@ string class.
 - [Contributing to String Foundation](#contributing-to-string-foundation)
 - [License](#license)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
 
 ## Quick Start
@@ -371,8 +372,8 @@ The `nl_to` method converts a string with newlines to its specific characters.
 The `nl2` method is an alias for `nl_to` .
 
 ```ruby
-"Hi!\nWe are Brushdown.".nl_to(" / ") #=> "Hi! / We are Brushdown."
-"Hi!\nWe are Brushdown.".nl2(" / ")   #=> "Hi! / We are Brushdown."
+"Hi!\nI am Jaga Apple.".nl_to(" / ") #=> "Hi! / I am Jaga Apple."
+"Hi!\nI am Jaga Apple.".nl2(" / ")   #=> "Hi! / I am Jaga Apple."
 ```
 
 The `nl_to_br` method replaces the newlines in a string with HTML tag `<br>` for
@@ -380,8 +381,8 @@ break line.
 The `nl2br` method is an alias for `nl_to_br` .
 
 ```ruby
-"Hi!\nWe are Brushdown.".nl_to_br #=> "Hi!<br>We are Brushdown."
-"Hi!\nWe are Brushdown.".nl2br    #=> "Hi!<br>We are Brushdown."
+"Hi!\nI am Jaga Apple.".nl_to_br #=> "Hi!<br>I am Jaga Apple."
+"Hi!\nI am Jaga Apple.".nl2br    #=> "Hi!<br>I am Jaga Apple."
 ```
 
 
@@ -425,18 +426,18 @@ The `like_f?` method checks whether a string is a floating point number.
 The Case Methods convert to a case style, such as `lowerCamelCase` and
 `lower_snake_case` . The following methods are available.
 
-| METHOD NAME | CASE STYLE                    | EXAMPLE            |
-|:------------|:------------------------------|:-------------------|
-| `to_lcamel` | Lower Camel Case              | `weAreBrushdown`   |
-| `to_ucamel` | Upper Camel Case              | `WeAreBrushdown`   |
-| `to_lsnake` | Lower Snake Case              | `we_are_brushdown` |
-| `to_usnake` | Upper Snake Case              | `We_Are_Brushdown` |
-| `to_lkebab` | Lower Kebab Case (Chain Case) | `we-are-brushdown` |
-| `to_ukebab` | Upper Kebab Case (Train Case) | `We-Are-Brushdown` |
-| `to_lspace` | Lower Space Case (Lower Case) | `we are brushdown` |
-| `to_uspace` | Upper Space Case (Start Case) | `We Are Brushdown` |
-| `to_ldot`   | Lower Dot Case                | `we.are.brushdown` |
-| `to_udot`   | Upper Dot Case                | `We.Are.Brushdown` |
+| METHOD NAME | CASE STYLE                    | EXAMPLE           |
+|:------------|:------------------------------|:------------------|
+| `to_lcamel` | Lower Camel Case              | `iAmJagaApple`    |
+| `to_ucamel` | Upper Camel Case              | `IAmJagaApple`    |
+| `to_lsnake` | Lower Snake Case              | `i_am_jaga_apple` |
+| `to_usnake` | Upper Snake Case              | `I_Am_Jaga_Apple` |
+| `to_lkebab` | Lower Kebab Case (Chain Case) | `i-am-jaga-apple` |
+| `to_ukebab` | Upper Kebab Case (Train Case) | `I-Am-Jaga-Apple` |
+| `to_lspace` | Lower Space Case (Lower Case) | `i am jaga apple` |
+| `to_uspace` | Upper Space Case (Start Case) | `I Am Jaga Apple` |
+| `to_ldot`   | Lower Dot Case                | `i.am.jaga.apple` |
+| `to_udot`   | Upper Dot Case                | `I.Am.Jaga.Apple` |
 
 ```ruby
 "user_id".to_lcamel   #=> "userId"
@@ -446,7 +447,7 @@ The Case Methods convert to a case style, such as `lowerCamelCase` and
 
 ## Contributing to String Foundation
 Bug reports and pull requests are welcome on GitHub at
-[https://github.com/brushdown/string_foundation.rb](https://github.com/brushdown/string_foundation.rb).
+[https://github.com/jagaapple/string_foundation.rb](https://github.com/jagaapple/string_foundation.rb).
 This project is intended to be a safe, welcoming space for collaboration, and
 contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org)
 code of conduct.
@@ -460,4 +461,4 @@ For more details, see [GitHub Flow – Scott Chacon](http://scottchacon.com/2011
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-Copyright 2017 Jaga Apple and Brushdown. All rights reserved.
+Copyright 2017 Jaga Apple. All rights reserved.
