@@ -1,7 +1,7 @@
 # ==============================================================================
 # LIB - STRING FOUNDATION - CONVERT
-# ==============================================================================
 # frozen_string_literal: true
+# ==============================================================================
 require_relative "convertible"
 require_relative "like"
 require_relative "with"
@@ -30,7 +30,7 @@ class String
   def to_pretty
     return self.without_leading_zeros.to_i if self.like_i?
     return self.without_leading_zeros.to_f if self.like_f?
-    return self.to_bool                    if self.to_bool?
+    return self.to_bool if self.to_bool?
 
     (self.length > 0) ? self : nil
   end

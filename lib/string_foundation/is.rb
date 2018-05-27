@@ -1,8 +1,13 @@
 # ==============================================================================
-# LIB - STRING FOUNDATION - STRING FOUNDATION
+# LIB - STRING FOUNDATION - IS
 # frozen_string_literal: true
 # ==============================================================================
-# Require methods.
-Dir.glob(File.join(File.dirname(__FILE__), "string_foundation", "*.rb")).each do |file|
-  require file
+class String
+
+  def is_sym?(symbol)
+    raise ArgumentError.new("argument must be Symbol") unless symbol.instance_of?(Symbol)
+
+    (self == symbol.to_s)
+  end
+
 end

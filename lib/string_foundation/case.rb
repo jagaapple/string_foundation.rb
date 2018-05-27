@@ -1,22 +1,21 @@
 # ==============================================================================
 # LIB - STRING FOUNDATION - CASE
-# ==============================================================================
 # frozen_string_literal: true
+# ==============================================================================
 class String
 
   # Convert to lowerCamelCase.
   def to_lcamel
     ucamel = self.to_ucamel
-    ucamel.make_head_lower
+    ucamel.instance_eval { make_head_lower }
   end
 
   # Convert to UpperCamelCase.
   def to_ucamel
-    self.split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join
-    end.join
+    split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join
+    end
+    .join
   end
 
   # Convert to lower_snake_case.
@@ -27,11 +26,10 @@ class String
 
   # Convert to Upper_Snake_Case.
   def to_usnake
-    self.split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join("_")
-    end.join("_")
+    split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join("_")
+    end
+    .join("_")
   end
 
   # Convert to lower-kebab-case.
@@ -42,11 +40,10 @@ class String
 
   # Convert to Upper-Kebab-Case.
   def to_ukebab
-    self.split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join("-")
-    end.join("-")
+    split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join("-")
+    end
+    .join("-")
   end
 
   # Convert to lower space case.
@@ -57,11 +54,10 @@ class String
 
   # Convert to Upper Space Case.
   def to_uspace
-    self.split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join(" ")
-    end.join(" ")
+    split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join(" ")
+    end
+    .join(" ")
   end
 
   # Convert to lower.dot.case.
@@ -72,32 +68,20 @@ class String
 
   # Convert to Upper.Dot.Case.
   def to_udot
-    self.split_camel.map do |cw|
-      cw.split(/\.|_|-|\s/).map do |w|
-        w.capitalize
-      end.join(".")
-    end.join(".")
+    split_camel.map do |cw|
+      cw.split(/\.|_|-|\s/).map { |w| w.capitalize }.join(".")
+    end
+    .join(".")
   end
 
 
   # ----------------------------------------------------------------------------
   # Private
   # ----------------------------------------------------------------------------
-  # These methods are an internal, private and should not be used in applications.
-  # ----------------------------------------------------------------------------
+  private
   # Split string according to camel case.
   def split_camel
-    self.split /(?=[A-Z])/
-  end
-
-  # Whether a character is uppder case or not.
-  def is_upper?
-    /[[:upper:]]/.match(self) ? true : false
-  end
-
-  # Whether a character is lower case or not.
-  def is_lower?
-    /[[:lower:]]/.match(self) ? true : false
+    self.split(/(?=[A-Z])/)
   end
 
   # Make first character lower case.

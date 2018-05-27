@@ -1,7 +1,7 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - LIKE
-# ==============================================================================
+# SPEC - STRING FOUNDATION - LIKE SPEC
 # frozen_string_literal: true
+# ==============================================================================
 describe "[ Like Methods ]" do
 
   # ----------------------------------------------------------------------------
@@ -12,19 +12,19 @@ describe "[ Like Methods ]" do
     subject { string.like_i? }
 
     context "when a string is an integral number," do
-      context "and it is a positive number," do
+      context "it is a positive number," do
         let(:string) { "123" }
 
         it { is_expected.to be true }
       end
 
-      context "and it is a positive number with a sign," do
+      context "it is a positive number with a sign," do
         let(:string) { "+123" }
 
         it { is_expected.to be true }
       end
 
-      context "and it is a negative number," do
+      context "it is a negative number," do
         let(:string) { "-5" }
 
         it { is_expected.to be true }
@@ -32,19 +32,19 @@ describe "[ Like Methods ]" do
     end
 
     context "when a string is a floating point number," do
-      context "and it is a positive number," do
+      context "it is a positive number," do
         let(:string) { "0.123" }
 
         it { is_expected.to be false }
       end
 
-      context "and it is a positive number with a sign," do
+      context "it is a positive number with a sign," do
         let(:string) { "+0.123" }
 
         it { is_expected.to be false }
       end
 
-      context "and it is a negative number," do
+      context "it is a negative number," do
         let(:string) { "-5.123" }
 
         it { is_expected.to be false }
@@ -52,19 +52,19 @@ describe "[ Like Methods ]" do
     end
 
     context "when a string is a floating point number without an integer," do
-      context "and it is a positive number," do
+      context "it is a positive number," do
         let(:string) { ".123" }
 
         it { is_expected.to be false }
       end
 
-      context "and it is a positive number with a sign," do
+      context "it is a positive number with a sign," do
         let(:string) { "+.123" }
 
         it { is_expected.to be false }
       end
 
-      context "and it is a negative number," do
+      context "it is a negative number," do
         let(:string) { "-.123" }
 
         it { is_expected.to be false }
@@ -72,19 +72,19 @@ describe "[ Like Methods ]" do
     end
 
     context "when a string a number has leading zeros," do
-      context "and it is a positive number," do
+      context "it is a positive number," do
         let(:string) { "00000123" }
 
         it { is_expected.to be true }
       end
 
-      context "and it is a positive number with a sign," do
+      context "it is a positive number with a sign," do
         let(:string) { "+00000123" }
 
         it { is_expected.to be true }
       end
 
-      context "and it is a negative number," do
+      context "it is a negative number," do
         let(:string) { "-00000123" }
 
         it { is_expected.to be true }
@@ -118,19 +118,19 @@ describe "[ Like Methods ]" do
     subject { string.like_f? }
 
     context "when a string is an integral number," do
-      context "and it is a positive number," do
+      context "it is a positive number," do
         let(:string) { "123" }
 
         it { is_expected.to be false }
       end
 
-      context "and it is a positive number with a sign," do
+      context "it is a positive number with a sign," do
         let(:string) { "+123" }
 
         it { is_expected.to be false }
       end
 
-      context "and it is a negative number," do
+      context "it is a negative number," do
         let(:string) { "-5" }
 
         it { is_expected.to be false }
@@ -138,19 +138,19 @@ describe "[ Like Methods ]" do
     end
 
     context "when a string is a floating point number," do
-      context "and it is a positive number," do
+      context "it is a positive number," do
         let(:string) { "0.123" }
 
         it { is_expected.to be true }
       end
 
-      context "and it is a positive number with a sign," do
+      context "it is a positive number with a sign," do
         let(:string) { "+0.123" }
 
         it { is_expected.to be true }
       end
 
-      context "and it is a negative number," do
+      context "it is a negative number," do
         let(:string) { "-5.123" }
 
         it { is_expected.to be true }
@@ -158,19 +158,19 @@ describe "[ Like Methods ]" do
     end
 
     context "when a string is a floating point number without an integer," do
-      context "and it is a positive number," do
+      context "it is a positive number," do
         let(:string) { ".123" }
 
         it { is_expected.to be true }
       end
 
-      context "and it is a positive number with a sign," do
+      context "it is a positive number with a sign," do
         let(:string) { "+.123" }
 
         it { is_expected.to be true }
       end
 
-      context "and it is a negative number," do
+      context "it is a negative number," do
         let(:string) { "-.123" }
 
         it { is_expected.to be true }
@@ -178,19 +178,19 @@ describe "[ Like Methods ]" do
     end
 
     context "when a string a number has leading zeros," do
-      context "and it is a positive number," do
+      context "it is a positive number," do
         let(:string) { "00000123" }
 
         it { is_expected.to be false }
       end
 
-      context "and it is a positive number with a sign," do
+      context "it is a positive number with a sign," do
         let(:string) { "+00000123" }
 
         it { is_expected.to be false }
       end
 
-      context "and it is a negative number," do
+      context "it is a negative number," do
         let(:string) { "-00000123" }
 
         it { is_expected.to be false }

@@ -1,21 +1,21 @@
 # ==============================================================================
-# SPEC - STRING FOUNDATION - CASE
-# ==============================================================================
+# SPEC - STRING FOUNDATION - CASE SPEC
 # frozen_string_literal: true
+# ==============================================================================
 describe "[ Case Methods ]" do
   # Define shared contexts.
   # ----------------------------------------------------------------------------
-  shared_context "one word"         do let(:string) { "string" }           end
-  shared_context "lowerCamelCase"   do let(:string) { "weAreBrushdown" }   end
-  shared_context "UpperCamelCase"   do let(:string) { "WeAreBrushdown" }   end
-  shared_context "lower_snake_case" do let(:string) { "we_are_brushdown" } end
-  shared_context "Upper_Snake_Case" do let(:string) { "We_Are_Brushdown" } end
-  shared_context "lower-kebab-case" do let(:string) { "we-are-brushdown" } end
-  shared_context "Upper-Kebab-Case" do let(:string) { "We-Are-Brushdown" } end
-  shared_context "lower space case" do let(:string) { "we are brushdown" } end
-  shared_context "Upper Space Case" do let(:string) { "We Are Brushdown" } end
-  shared_context "lower.dot.case"   do let(:string) { "we.are.brushdown" } end
-  shared_context "Upper.Dot.Case"   do let(:string) { "We.Are.Brushdown" } end
+  shared_context "one word"         do let(:string) { "string" }          end
+  shared_context "lowerCamelCase"   do let(:string) { "iAmJagaApple" }    end
+  shared_context "UpperCamelCase"   do let(:string) { "IAmJagaApple" }    end
+  shared_context "lower_snake_case" do let(:string) { "I_am_jaga_apple" } end
+  shared_context "Upper_Snake_Case" do let(:string) { "I_Am_Jaga_Apple" } end
+  shared_context "lower-kebab-case" do let(:string) { "i-am-jaga-apple" } end
+  shared_context "Upper-Kebab-Case" do let(:string) { "I-Am-Jaga-Apple" } end
+  shared_context "lower space case" do let(:string) { "i am jaga apple" } end
+  shared_context "Upper Space Case" do let(:string) { "I Am Jaga Apple" } end
+  shared_context "lower.dot.case"   do let(:string) { "i.am.jaga.apple" } end
+  shared_context "Upper.Dot.Case"   do let(:string) { "I.Am.Jaga.Apple" } end
   # ----------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
@@ -27,7 +27,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to lowerCamelCase" do
-      it { is_expected.to eq("weAreBrushdown") }
+      it { is_expected.to eq("iAmJagaApple") }
     end
     # --------------------------------------------------------------------------
 
@@ -107,7 +107,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to UpperCamelCase" do
-      it { is_expected.to eq("WeAreBrushdown") }
+      it { is_expected.to eq("IAmJagaApple") }
     end
     # --------------------------------------------------------------------------
 
@@ -187,7 +187,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to lower_snake_case" do
-      it { is_expected.to eq("we_are_brushdown") }
+      it { is_expected.to eq("i_am_jaga_apple") }
     end
     # --------------------------------------------------------------------------
 
@@ -267,7 +267,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to Upper_Snake_Case" do
-      it { is_expected.to eq("We_Are_Brushdown") }
+      it { is_expected.to eq("I_Am_Jaga_Apple") }
     end
     # --------------------------------------------------------------------------
 
@@ -347,7 +347,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to lower-kebab-case" do
-      it { is_expected.to eq("we-are-brushdown") }
+      it { is_expected.to eq("i-am-jaga-apple") }
     end
     # --------------------------------------------------------------------------
 
@@ -427,7 +427,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to Upper-Kebab-Case" do
-      it { is_expected.to eq("We-Are-Brushdown") }
+      it { is_expected.to eq("I-Am-Jaga-Apple") }
     end
     # --------------------------------------------------------------------------
 
@@ -507,7 +507,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to lower space case" do
-      it { is_expected.to eq("we are brushdown") }
+      it { is_expected.to eq("i am jaga apple") }
     end
     # --------------------------------------------------------------------------
 
@@ -587,7 +587,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to Upper Space Case" do
-      it { is_expected.to eq("We Are Brushdown") }
+      it { is_expected.to eq("I Am Jaga Apple") }
     end
     # --------------------------------------------------------------------------
 
@@ -667,7 +667,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to lower.dot.case" do
-      it { is_expected.to eq("we.are.brushdown") }
+      it { is_expected.to eq("i.am.jaga.apple") }
     end
     # --------------------------------------------------------------------------
 
@@ -750,7 +750,7 @@ describe "[ Case Methods ]" do
     # Define shared examples.
     # --------------------------------------------------------------------------
     shared_examples "be converted to Upper.Dot.Case" do
-      it { is_expected.to eq("We.Are.Brushdown") }
+      it { is_expected.to eq("I.Am.Jaga.Apple") }
     end
     # --------------------------------------------------------------------------
 
@@ -826,7 +826,7 @@ describe "[ Case Methods ]" do
   # ----------------------------------------------------------------------------
   describe "SPLIT ACCORDING TO CAMEL CASE ::" do
     let(:string) { nil }
-    subject { string.split_camel }
+    subject { string.instance_eval { split_camel } }
 
     context "When string is Upper Camel Case," do
       let!(:string) { "ThisIsWord" }
@@ -846,49 +846,11 @@ describe "[ Case Methods ]" do
 
 
   # ----------------------------------------------------------------------------
-  # Check is_upper?
-  # ----------------------------------------------------------------------------
-  describe "CHECK is_upper? ::" do
-    let(:character) { nil }
-    subject { character.is_upper? }
-
-    context "when a character is upper case," do
-      let(:character) { "C" }
-      it { is_expected.to be true }
-    end
-
-    context "when a character is lower case," do
-      let(:character) { "c" }
-      it { is_expected.to be false }
-    end
-  end
-
-
-  # ----------------------------------------------------------------------------
-  # Check is_lower?
-  # ----------------------------------------------------------------------------
-  describe "CHECK is_lower? ::" do
-    let(:character) { nil }
-    subject { character.is_lower? }
-
-    context "when a character is lower case," do
-      let(:character) { "c" }
-      it { is_expected.to be true }
-    end
-
-    context "when a character is uppser case," do
-      let(:character) { "C" }
-      it { is_expected.to be false }
-    end
-  end
-
-
-  # ----------------------------------------------------------------------------
   # Make First Character Lower Case
   # ----------------------------------------------------------------------------
   describe "MAKE FIRST CHARACTER LOWER CASE ::" do
     let(:string) { nil }
-    subject { string.make_head_lower }
+    subject { string.instance_eval { make_head_lower } }
 
     context "When first character is Upper Case," do
       let(:string) { "ThisIsString" }
